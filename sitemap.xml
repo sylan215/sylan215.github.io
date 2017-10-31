@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.sylan215.com/python-config-build.html</loc>
+    
+    <lastmod>2017-10-31T16:49:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
     
     <lastmod>2017-10-30T18:03:53.000Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://www.sylan215.com/python-coding.html</loc>
     
     <lastmod>2017-10-30T18:03:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.sylan215.com/python-config-build.html</loc>
-    
-    <lastmod>2017-10-30T18:03:04.000Z</lastmod>
     
   </url>
   

@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-config-build.html</loc>
+    <lastmod>2017-10-31T16:49:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>多个版本的 Python 在使用中的灵活切换</title>
+        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
+        
+        <tag>python3</tag>
+         
+        <tag>python多版本共存</tag>
+         
+        <tag>windows python多版本</tag>
+         
+         
+           
+             
+              <breadCrumb title="environment" url="http://www.sylan215.com/categories/environment/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/environment/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
     <lastmod>2017-10-30T18:03:53.000Z</lastmod>
     <data>
@@ -240,33 +267,6 @@
 
     
   <url>
-    <loc>http://www.sylan215.com/python-config-build.html</loc>
-    <lastmod>2017-10-30T18:03:04.000Z</lastmod>
-    <data>
-        <display>
-        <title>多个版本的 Python 在使用中的灵活切换</title>
-        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
-        
-        <tag>python3</tag>
-         
-        <tag>版本</tag>
-         
-        <tag>切换</tag>
-         
-         
-           
-             
-              <breadCrumb title="environment" url="http://www.sylan215.com/categories/environment/"/>
-          
-             
-              <breadCrumb title="python" url="http://www.sylan215.com/categories/environment/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.sylan215.com/python-defaultencode.html</loc>
     <lastmod>2017-10-30T18:02:55.000Z</lastmod>
     <data>
@@ -276,13 +276,13 @@
         
         <tag>python</tag>
          
+        <tag>python3</tag>
+         
         <tag>decode</tag>
          
         <tag>encode</tag>
          
         <tag>编码</tag>
-         
-        <tag>python3</tag>
          
          
            
@@ -307,13 +307,13 @@
         
         <tag>python</tag>
          
+        <tag>python3</tag>
+         
         <tag>decode</tag>
          
         <tag>encode</tag>
          
         <tag>编码</tag>
-         
-        <tag>python3</tag>
          
          
            

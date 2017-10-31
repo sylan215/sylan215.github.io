@@ -52,7 +52,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python多版本共存,windows python多版本" />
+  <meta name="keywords" content="python3,python多版本共存,windows python多版本," />
 
 
 
@@ -68,20 +68,20 @@
 
 
 
-<meta name="description" content="虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为历史原因，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。">
-<meta name="keywords" content="python3,版本,切换">
+<meta name="description" content="今天我们来说说在 windows 系统上如果有多版本的 python 并存时，如何优雅的进行灵活切换。">
+<meta name="keywords" content="python3,python多版本共存,windows python多版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多个版本的 Python 在使用中的灵活切换">
 <meta property="og:url" content="http://www.sylan215.com/python-config-build.html">
 <meta property="og:site_name" content="1言5语">
-<meta property="og:description" content="虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为历史原因，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。">
-<meta property="og:image" content="http://www.sylan215.com/upload/python-path.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/python-rename.png">
-<meta property="og:updated_time" content="2017-10-30T18:03:04.000Z">
+<meta property="og:description" content="今天我们来说说在 windows 系统上如果有多版本的 python 并存时，如何优雅的进行灵活切换。">
+<meta property="og:image" content="http://www.sylan215.com/upload/python-config-build/python-path.png">
+<meta property="og:image" content="http://www.sylan215.com/upload/python-config-build/python-rename.png">
+<meta property="og:updated_time" content="2017-10-31T16:49:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多个版本的 Python 在使用中的灵活切换">
-<meta name="twitter:description" content="虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为历史原因，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。">
-<meta name="twitter:image" content="http://www.sylan215.com/upload/python-path.png">
+<meta name="twitter:description" content="今天我们来说说在 windows 系统上如果有多版本的 python 并存时，如何优雅的进行灵活切换。">
+<meta name="twitter:image" content="http://www.sylan215.com/upload/python-config-build/python-path.png">
 
 
 
@@ -409,7 +409,8 @@
       
 
       
-        <p>虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为<em>历史原因</em>，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。<br><a id="more"></a><br>先说明下，本次我们不介绍 virtualenv，也不介绍 pipenv，因为这两个都是为了大型的 Python 工程做准备的，之后会单独文字进行说明。</p>
+        <p>今天我们来说说在 windows 系统上如果有多版本的 python 并存时，如何优雅的进行灵活切换。<br><a id="more"></a><br>虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为<em>历史原因</em>，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。</p>
+<p>先说明下，本次我们不介绍 virtualenv，也不介绍 pipenv，因为这两个都是为了大型的 Python 工程做准备的，之后会单独文字进行说明。</p>
 <p>本次是不借助外部工具，来实现快捷切换。其实也可以说是利用系统环境变量的逻辑来实现目的。</p>
 <p>本次环境以 Windows 为例：</p>
 <blockquote>
@@ -417,13 +418,13 @@
 </blockquote>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先安装好 Python3.4 和 Python2.7，安装包可以在这个地方进行下载：<a href="https://www.python.org/downloads/windows/" target="_blank" rel="external">点击跳转</a>。</p>
 <h4 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h4><p>然后分别把对应版本的安装路径加入到系统环境变量中去：</p>
-<p><img src="/upload/python-path.png" alt="设置环境变量"></p>
+<p><img src="/upload/python-config-build/python-path.png" alt="设置环境变量"></p>
 <p>新起一个 cmd 窗口验证下添加后的效果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\Users&gt;path</div><div class="line">PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32</div><div class="line">\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Python34;C:\Python27;</div></pre></td></tr></table></figure>
 <p>这时候我们直接在 cmd 输入 python，已经可以被识别了，但是识别的总是路径在环境变量中排前面的那个版本的 Python，比如目前从上图看 Python3.4 是排前面的，实际验证下看看：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">C:\Users&gt;python</div><div class="line">Python 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 20:20:57) [MSC v.1600 64 bit (AM</div><div class="line">D64)] on win32</div><div class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
 <h4 id="重命名主程序"><a href="#重命名主程序" class="headerlink" title="重命名主程序"></a>重命名主程序</h4><p>然后我们分别把两个版本的 Python 主程序 exe 改下名，3.4 版本的改名为 python34.exe，2.7 版本的改名为 python27.exe：</p>
-<p><img src="/upload/python-rename.png" alt="主程序改名"></p>
+<p><img src="/upload/python-config-build/python-rename.png" alt="主程序改名"></p>
 <p>再分别运行 python34 和 python27 试试：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">C:\Users&gt;python34</div><div class="line">Python 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 20:20:57) [MSC v.1600 64 bit (AM</div><div class="line">D64)] on win32</div><div class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</div><div class="line">&gt;&gt;&gt;</div><div class="line"></div><div class="line">C:\Users&gt;python27</div><div class="line">Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:19:30) [MSC v.1500 32 bit (In</div><div class="line">tel)] on win32</div><div class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
 <p>从上图可以看出，我们已经可以实现分别运行指定版本的效果了，如果执行脚本的话直接 <code>python34 test.py</code> 或者 <code>python27 test.py</code> 就行了。</p>
@@ -482,9 +483,9 @@
           
             <a href="/tags/python3/" rel="tag"># python3</a>
           
-            <a href="/tags/版本/" rel="tag"># 版本</a>
+            <a href="/tags/python多版本共存/" rel="tag"># python多版本共存</a>
           
-            <a href="/tags/切换/" rel="tag"># 切换</a>
+            <a href="/tags/windows-python多版本/" rel="tag"># windows python多版本</a>
           
         </div>
       
@@ -610,7 +611,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
