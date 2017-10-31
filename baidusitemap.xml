@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
+    <lastmod>2017-10-30T18:03:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
+        <pubTime>2017-10-20T17:30:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>环境</tag>
+         
+        <tag>搭建</tag>
+         
+        <tag>免密</tag>
+         
+        <tag>配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="environment" url="http://www.sylan215.com/categories/environment/"/>
+          
+             
+              <breadCrumb title="git" url="http://www.sylan215.com/categories/environment/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/guodusheji.html</loc>
+    <lastmod>2017-10-30T18:03:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>过度设计</title>
+        <pubTime>2017-09-04T14:23:44.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>过度</tag>
+         
+        <tag>产品</tag>
+         
+        <tag>用户</tag>
+         
+         
+           
+             
+              <breadCrumb title="learning" url="http://www.sylan215.com/categories/learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/heart-flow.html</loc>
+    <lastmod>2017-10-30T18:03:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>心流</title>
+        <pubTime>2017-10-24T15:00:00.000Z</pubTime>
+        
+        <tag>驱动力</tag>
+         
+        <tag>python</tag>
+         
+        <tag>encoding</tag>
+         
+        <tag>问题</tag>
+         
+        <tag>心流</tag>
+         
+         
+           
+             
+              <breadCrumb title="reading" url="http://www.sylan215.com/categories/reading/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/hexo-next-hongxin.html</loc>
+    <lastmod>2017-10-30T18:03:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>next 主题下点击后出现红心效果</title>
+        <pubTime>2017-10-30T01:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>红心</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/java-duotai.html</loc>
+    <lastmod>2017-10-30T18:03:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java 三大特性之多态</title>
+        <pubTime>2017-03-14T13:56:00.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>封装</tag>
+         
+        <tag>特性</tag>
+         
+        <tag>继承</tag>
+         
+        <tag>多态</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="java" url="http://www.sylan215.com/categories/programming/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/java-fengzhuang.html</loc>
+    <lastmod>2017-10-30T18:03:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java 三大特性之封装</title>
+        <pubTime>2017-03-06T12:22:36.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>封装</tag>
+         
+        <tag>特性</tag>
+         
+        <tag>继承</tag>
+         
+        <tag>多态</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="java" url="http://www.sylan215.com/categories/programming/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/java-jicheng.html</loc>
+    <lastmod>2017-10-30T18:03:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java 三大特性之继承</title>
+        <pubTime>2017-03-10T15:42:45.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>封装</tag>
+         
+        <tag>特性</tag>
+         
+        <tag>继承</tag>
+         
+        <tag>多态</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="java" url="http://www.sylan215.com/categories/programming/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/python-coding.html</loc>
+    <lastmod>2017-10-30T18:03:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>彻底搞懂 Python 编码</title>
+        <pubTime>2017-10-19T16:09:00.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>decode</tag>
+         
+        <tag>encode</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>coding</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/programming/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/python-config-build.html</loc>
+    <lastmod>2017-10-30T18:03:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>多个版本的 Python 在使用中的灵活切换</title>
+        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
+        
+        <tag>python3</tag>
+         
+        <tag>版本</tag>
+         
+        <tag>切换</tag>
+         
+         
+           
+             
+              <breadCrumb title="environment" url="http://www.sylan215.com/categories/environment/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/environment/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/python-defaultencode.html</loc>
+    <lastmod>2017-10-30T18:02:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python2 和 Python3 中默认编码的差异</title>
+        <pubTime>2017-09-30T16:56:21.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>decode</tag>
+         
+        <tag>encode</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>python3</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/programming/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/python-socket-inet-aton.html</loc>
+    <lastmod>2017-10-30T18:02:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</title>
+        <pubTime>2017-09-28T15:03:02.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>decode</tag>
+         
+        <tag>encode</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>python3</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/programming/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/python-wenjianbianli.html</loc>
+    <lastmod>2017-10-30T18:02:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 实现文件递归遍历</title>
+        <pubTime>2017-02-27T14:27:58.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>文件</tag>
+         
+        <tag>递归</tag>
+         
+        <tag>文件夹</tag>
+         
+        <tag>遍历</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/programming/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/restore-launchpad.html</loc>
+    <lastmod>2017-10-30T18:02:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何删除 Launchpad 中的无用图标</title>
+        <pubTime>2017-10-25T13:52:50.000Z</pubTime>
+        
+        <tag>Launchpad</tag>
+         
+        <tag>恢复</tag>
+         
+        <tag>删除图标</tag>
+         
+         
+           
+             
+              <breadCrumb title="learning" url="http://www.sylan215.com/categories/learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/tiandiren.html</loc>
+    <lastmod>2017-10-30T18:02:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>天时地利人和</title>
+        <pubTime>2017-04-10T14:26:39.000Z</pubTime>
+        
+        <tag>天时</tag>
+         
+        <tag>地利</tag>
+         
+        <tag>人和</tag>
+         
+        <tag>异类</tag>
+         
+         
+           
+             
+              <breadCrumb title="reading" url="http://www.sylan215.com/categories/reading/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/xiezaiqianmian.html</loc>
+    <lastmod>2017-10-30T18:01:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>写在前面</title>
+        <pubTime>2017-02-22T14:05:36.000Z</pubTime>
+        
+        <tag>技术</tag>
+         
+        <tag>作家</tag>
+         
+        <tag>公众号</tag>
+         
+        <tag>编程</tag>
+         
+        <tag>十年</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.sylan215.com/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>
