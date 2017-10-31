@@ -1,6 +1,6 @@
 code {
-  color: #d05 !important;
-  background: #eee !important;
+  $code-foregroun: #d05 !important;
+  $code-background: #eee !important;
 }
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1759ff;
+  background: #28cbfc;
 }
 .links-of-blogroll {
   font-size: 13px;
