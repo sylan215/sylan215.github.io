@@ -75,7 +75,7 @@
 <meta property="og:url" content="http://www.sylan215.com/heart-flow.html">
 <meta property="og:site_name" content="1言5语">
 <meta property="og:description" content="最近在看《驱动力》这本书，其中有提到「心流」这个词，只是从描述来说，有点太抽象，不过刚好最近感受了几次「心流」的感觉，所以记录一下。">
-<meta property="og:updated_time" content="2017-10-30T18:03:41.000Z">
+<meta property="og:updated_time" content="2017-10-31T17:35:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="心流">
 <meta name="twitter:description" content="最近在看《驱动力》这本书，其中有提到「心流」这个词，只是从描述来说，有点太抽象，不过刚好最近感受了几次「心流」的感觉，所以记录一下。">
@@ -373,8 +373,8 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="page-pv">热度
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
             </span>
           
 
@@ -410,7 +410,7 @@
 <p>也就是这个错误导致我纠结了很久，花费了不少的时间，甚至有一段时间都搁置了，最终我把问题提交到了 stackoverflow，同时继续查资料，也就是提交问题后不久，就在 python 官方文档中找到了解决方案：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">The errors parameter is the same as the parameter of the decode() method but</div><div class="line">supports a few more possible handlers. As well as &apos;strict&apos;, &apos;ignore&apos;, and</div><div class="line">&apos;replace&apos; (which in this case inserts a question mark instead of the unencodable   </div><div class="line">character), there is also &apos;xmlcharrefreplace&apos; (inserts an XML character</div><div class="line">reference) and backslashreplace (inserts a \uNNNN escape sequence).</div></pre></td></tr></table></figure>
 <p>其实还是蛮讽刺的，因为基础没打牢，一个基本的函数实现却耗费了不少的时间，虽然解决问题后，那种兴奋的感觉还是蛮让人激动，不过最大的收获还是<strong>发现问题先看官方文档</strong>。</p>
-<p>上述问题的详细描述可以 <a href="https://stackoverflow.com/questions/46115992/how-to-covert-the-bytes-to-the-manual-output-when-i-read-a-pe-file" target="_blank" rel="external">看这里</a>。</p>
+<p>上述问题的详细描述可以 <a href="https://stackoverflow.com/questions/46115992/how-to-covert-the-bytes-to-the-manual-output-when-i-read-a-pe-file" target="_blank" rel="external">看 stackoverflow</a>。</p>
 <h4 id="第二次是解决一个打包的问题。"><a href="#第二次是解决一个打包的问题。" class="headerlink" title="第二次是解决一个打包的问题。"></a>第二次是解决一个打包的问题。</h4><p>因为我的工具会分发给大家使用，但不是每个人的环境都安装了 Python3，或者即使安装了，相关的依赖库也不一定完备，所以我是使用 pyinstaller 进行了打包后再进行分发的，但是因为 pyinstaller 自身的 Bug，让我打包的 exe 总是没法自动提权，网上搜了下，很多人碰到这个问题，但是都没有很完整的解决方案，自己在尝试多次后，都有点要放弃了。</p>
 <p>最后突然想起来自己使用的某些工具也是使用了类似的功能，所以问了下这些工具的打包流程，要了打包脚本看了下，突然了恍然大悟了，没有问题的这个是使用的 pyinstaller 提供的另外一个方式而已，只是会稍微麻烦点，需要单独准备资源文件，然后把资源文件进行嵌入，自己拿来改造优化一下，最终实现了预期效果。</p>
 <p>这件事给的教训就是，很多问题，一定要站在前人的肩膀上去看问题，这样可以是事半功倍，当然，拿了别人的解决方案也不能仅仅是拿来主义，需要搞明白其中的原理，方便自己举一反三，或者优化改进。</p>
@@ -422,7 +422,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.parent = parent</div></pre></td></tr></table></figure>
 <p>问题是简单的，道路是曲折的，问题解决了，心情是高兴的，留给自己更大的反思还是对于一些基础的巩固一定要加强，只有某一些理论知识丰富了，后面的实践才能更得心应手。</p>
 <p>当然，本次主要想说明的是解决问题的兴奋感，不管问题大小，只要是自己觉得有价值的，那么问题带来的不是挫折、不是困难、不是灾难，是兴奋、激动和「心流」的感觉。</p>
-<p>上述问题的详细描述可以 <a href="https://stackoverflow.com/questions/46215267/how-to-refresh-the-main-frame-when-the-child-dialog-do-someting" target="_blank" rel="external">看这里</a>。</p>
+<p>上述问题的详细描述可以 <a href="https://stackoverflow.com/questions/46215267/how-to-refresh-the-main-frame-when-the-child-dialog-do-someting" target="_blank" rel="external">看 stackoverflow</a>。</p>
 <p>简单做下总结。</p>
 <p>发现问题和解决问题的过程是最有意义的，有些问题解决后才发现原来只是某一点没有想到而已，但是在没有想到之前，这就是一个盲点，而解决这个盲点就是这个过程中最大的意义。</p>
 <p>比如最后一个问题，其实我之前也尝试过用父类的方法进行传递和调用，但是方法不正确，导致结果也不正确，最后就尝试其他方法，最后却还是兜兜转转转回来了。</p>
@@ -521,7 +521,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-defaultencode.html">Python2 和 Python3 中默认编码的差异</a></li><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li><li><a href="/python-socket-inet-aton.html">由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li><li><a href="/python-defaultencode.html">Python2 和 Python3 中默认编码的差异</a></li><li><a href="/python-socket-inet-aton.html">由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li></ul>
   
 
 
@@ -607,7 +607,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -680,7 +680,7 @@
 
   
     <span class="site-uv">
-      <i class="fa fa-user"></i>
+      本站访客数<i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       
     </span>
@@ -688,7 +688,7 @@
 
   
     <span class="site-pv">
-      <i class="fa fa-eye"></i>
+      本站总访问量<i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       
     </span>
@@ -1161,6 +1161,6 @@
 
 
   <!-- 页面点击小红心 -->
-  <!--<script type="text/javascript" src="/js/src/love.js"></script>-->
+  <script type="text/javascript" src="/js/src/love.js"></script>
 </body>
 </html>
