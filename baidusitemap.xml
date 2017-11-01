@@ -4,6 +4,59 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/tiandiren.html</loc>
+    <lastmod>2017-11-01T15:34:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>天时地利人和</title>
+        <pubTime>2017-04-10T14:26:39.000Z</pubTime>
+        
+        <tag>天时</tag>
+         
+        <tag>地利</tag>
+         
+        <tag>人和</tag>
+         
+        <tag>异类</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.sylan215.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
+    <lastmod>2017-11-01T15:30:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用七牛接口实现图片和文件一键上传</title>
+        <pubTime>2017-11-01T14:56:00.000Z</pubTime>
+        
+        <tag>七牛图片上传</tag>
+         
+        <tag>七牛文件上传</tag>
+         
+        <tag>图床</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/xiezaiqianmian.html</loc>
     <lastmod>2017-11-01T15:25:20.000Z</lastmod>
     <data>
@@ -25,32 +78,6 @@
            
              
               <breadCrumb title="生活感悟" url="http://www.sylan215.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/tiandiren.html</loc>
-    <lastmod>2017-11-01T15:25:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>天时地利人和</title>
-        <pubTime>2017-04-10T14:26:39.000Z</pubTime>
-        
-        <tag>天时</tag>
-         
-        <tag>地利</tag>
-         
-        <tag>人和</tag>
-         
-        <tag>异类</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="http://www.sylan215.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -433,33 +460,6 @@
           
              
               <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
-    <lastmod>2017-11-01T14:59:55.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用七牛接口实现图片和文件一键上传</title>
-        <pubTime>2017-11-01T14:56:00.000Z</pubTime>
-        
-        <tag>七牛图片上传</tag>
-         
-        <tag>七牛文件上传</tag>
-         
-        <tag>图床</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
           
         </display>
     </data>

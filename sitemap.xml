@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.sylan215.com/xiezaiqianmian.html</loc>
+    <loc>http://www.sylan215.com/tiandiren.html</loc>
     
-    <lastmod>2017-11-01T15:25:20.000Z</lastmod>
+    <lastmod>2017-11-01T15:34:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.sylan215.com/tiandiren.html</loc>
+    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
     
-    <lastmod>2017-11-01T15:25:01.000Z</lastmod>
+    <lastmod>2017-11-01T15:30:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.sylan215.com/xiezaiqianmian.html</loc>
+    
+    <lastmod>2017-11-01T15:25:20.000Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
     
     <lastmod>2017-11-01T15:01:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
-    
-    <lastmod>2017-11-01T14:59:55.000Z</lastmod>
     
   </url>
   
