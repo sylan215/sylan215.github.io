@@ -75,7 +75,7 @@
 <meta property="og:url" content="http://www.sylan215.com/java-jicheng.html">
 <meta property="og:site_name" content="1言5语">
 <meta property="og:description" content="前两天我们说了 Java 三大特性之封装，今天主要说说三大特性之继承。">
-<meta property="og:updated_time" content="2017-10-31T17:39:15.000Z">
+<meta property="og:updated_time" content="2017-11-01T15:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 三大特性之继承">
 <meta name="twitter:description" content="前两天我们说了 Java 三大特性之封装，今天主要说说三大特性之继承。">
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">programming</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -364,7 +364,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/java/" itemprop="url" rel="index">
+                  <a href="/categories/编程/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
                   </a>
                 </span>
@@ -406,7 +406,8 @@
       
 
       
-        <p>前两天我们说了 Java 三大特性之封装，今天主要说说三大特性之<strong>继承</strong>。<br><a id="more"></a><br>下面我们会通过继承的特点和对应的例子来分别进行说明。</p>
+        <p>前两天我们说了 Java 三大特性之封装，今天主要说说三大特性之<strong>继承</strong>。<br><a id="more"></a></p>
+<p>下面我们会通过继承的特点和对应的例子来分别进行说明。</p>
 <p><strong>子类拥有父类非 private 的属性，方法。<br>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。<br>子类可以用自己的方式实现父类的方法。</strong></p>
 <p>例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestClass</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] str)</span> </span>&#123;</div><div class="line">        Son simple = <span class="keyword">new</span> Son();</div><div class="line">        simple.method();</div><div class="line">        simple.printStr();</div><div class="line">        simple.method(<span class="string">"simple"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</div><div class="line">    <span class="comment">//父类的非private属性，子类也可以访问和使用</span></div><div class="line">    <span class="keyword">public</span> String str = <span class="string">"Simple"</span>;</div><div class="line">    Father() &#123;</div><div class="line">        System.out.println(<span class="string">"This is the Father's "</span> + str);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//父类的非private方法，子类可以调用</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"This is the Father's method"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String strs)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"This is the Father's method with param"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</div><div class="line">    <span class="comment">//子类可以拥有自己的属性</span></div><div class="line">    <span class="keyword">private</span> String ownStr = <span class="string">"ownStr"</span>;</div><div class="line">    Son() &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        System.out.println(<span class="string">"This is the Son's "</span> +</div><div class="line">                          <span class="keyword">super</span>.str);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//子类可以拥有自己的方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStr</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"This is the "</span> +</div><div class="line">                          <span class="string">"Son's method"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//子类可以重写父类的方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String strs)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"This is the Son's method, "</span> +</div><div class="line">                          <span class="string">"which is overriding from Father"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -537,7 +538,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/java-fengzhuang.html">Java 三大特性之封装</a></li><li><a href="/java-duotai.html">Java 三大特性之多态</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/java-duotai.html">Java 三大特性之多态</a></li><li><a href="/java-fengzhuang.html">Java 三大特性之封装</a></li></ul>
   
 
 
@@ -592,7 +593,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -603,7 +604,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -614,7 +615,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

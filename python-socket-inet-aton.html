@@ -75,7 +75,7 @@
 <meta property="og:url" content="http://www.sylan215.com/python-socket-inet-aton.html">
 <meta property="og:site_name" content="1言5语">
 <meta property="og:description" content="这几天在做一个功能实现的时候，需要把别人用 Python2.6 写好的脚步转成 Python3.4 实现，大部分地方转化都没啥问题，但是在 socket.inet_aton() 转化的过程中出了点问题，花费我不少的精力去解决，先做个记录备忘，同时给后续需要的人做个提醒。">
-<meta property="og:updated_time" content="2017-10-30T18:02:48.000Z">
+<meta property="og:updated_time" content="2017-11-01T15:21:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案">
 <meta name="twitter:description" content="这几天在做一个功能实现的时候，需要把别人用 Python2.6 写好的脚步转成 Python3.4 实现，大部分地方转化都没啥问题，但是在 socket.inet_aton() 转化的过程中出了点问题，花费我不少的精力去解决，先做个记录备忘，同时给后续需要的人做个提醒。">
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">programming</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -364,7 +364,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/python/" itemprop="url" rel="index">
+                  <a href="/categories/编程/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
                 </span>
@@ -406,15 +406,20 @@
       
 
       
-        <p>这几天在做一个功能实现的时候，需要把别人用 Python2.6 写好的脚步转成 Python3.4 实现，大部分地方转化都没啥问题，但是在 socket.inet_aton() 转化的过程中出了点问题，花费我不少的精力去解决，先做个记录备忘，同时给后续需要的人做个提醒。<br><a id="more"></a><br>首先说一下，我在解决这个问题前期的思路有点问题，所以请关注最后的总结。</p>
+        <p>这几天在做一个功能实现的时候，需要把别人用 Python2.6 写好的脚步转成 Python3.4 实现，大部分地方转化都没啥问题，但是在 socket.inet_aton() 转化的过程中出了点问题，花费我不少的精力去解决，先做个记录备忘，同时给后续需要的人做个提醒。<br><a id="more"></a></p>
+<p>首先说一下，我在解决这个问题前期的思路有点问题，所以请关注最后的总结。</p>
 <p>需求目的：把一个 ip 地址使用 socket.inet_aton() 转化后和一个字符串组合，然后算出 MD5。</p>
-<p>下面是 Python2.6 的实现代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python2</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    ip_md5 = hashlib.md5(socket.inet_aton(ip) + base_str).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure></p>
+<p>下面是 Python2.6 的实现代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python2</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    ip_md5 = hashlib.md5(socket.inet_aton(ip) + base_str).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure>
 <p>运行后的输出结果为：</p>
 <blockquote>
 <p>fc138bb4748a18f885cc321c2c6396e2</p>
 </blockquote>
-<p>如果原封不动的使用 Python3.4 运行后，报错如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">25</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">10</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(socket.inet_aton(ip) + base_str).digest().encode(<span class="string">'hex'</span>)</div><div class="line">TypeError: can<span class="string">'t concat bytes to str</span></div></pre></td></tr></table></figure></p>
-<p>提示说的是，socket.inet_aton(ip) 的返回值是 bytes 类型，所以不能和 str 类型的 base_str 直接进行连接操作。<br>也就是说 Python2.6 和 python3.4 中对于 socket.inet_aton(ip) 的实现是有差异的，查官方文档吧。<br>python2.6文档说明：</p>
+<p>如果原封不动的使用 Python3.4 运行后，报错如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">25</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">10</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(socket.inet_aton(ip) + base_str).digest().encode(<span class="string">'hex'</span>)</div><div class="line">TypeError: can<span class="string">'t concat bytes to str</span></div></pre></td></tr></table></figure>
+<p>提示说的是，socket.inet_aton(ip) 的返回值是 bytes 类型，所以不能和 str 类型的 base_str 直接进行连接操作。</p>
+<p>也就是说 Python2.6 和 python3.4 中对于 socket.inet_aton(ip) 的实现是有差异的，查官方文档吧。</p>
+<p>python2.6文档说明：</p>
 <blockquote>
 <p><strong>socket.inet_aton(ip_string)</strong><br>Convert an IPv4 address from dotted-quad string format (for example, ‘123.45.67.89’) to 32-bit packed binary format, as a <strong>bytes</strong> object four characters in length.</p>
 </blockquote>
@@ -422,10 +427,13 @@
 <blockquote>
 <p><strong>socket.inet_aton(ip_string)</strong><br>Convert an IPv4 address from dotted-quad string format (for example, ‘123.45.67.89’) to 32-bit packed binary format, as a <strong>string</strong> four characters in length.</p>
 </blockquote>
-<p>好吧，返回值类型不同，为了保证和原脚本逻辑一致，我就做个转化，把 bytes 主动转换为 str 类型再连接，修改后的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = hashlib.md5(str_md5).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure></p>
+<p>好吧，返回值类型不同，为了保证和原脚本逻辑一致，我就做个转化，把 bytes 主动转换为 str 类型再连接，修改后的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = hashlib.md5(str_md5).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure>
 <p>代码通过 decode 把 bytes 使用 gbk 的方式解码成 str，至于为什么用 gbk，是因为我对比了下，只有 gbk 编码方式解码后的输出才和 python2.6 中的 str 返回值结果一致。</p>
-<p>行，赶紧运行一把试试看。。。还是报错了，这次的报错内容变了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">34</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">12</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(str_md5).digest().encode(<span class="string">'hex'</span>)</div><div class="line">TypeError: Unicode-objects must be encoded before hashing</div></pre></td></tr></table></figure></p>
-<p>看起来 hashlib.md5() 在 Python2.6 和 Python3.4 中的实现也有差异，继续看文档。<br>python2.6文档说明：</p>
+<p>行，赶紧运行一把试试看。。。还是报错了，这次的报错内容变了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">34</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">12</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(str_md5).digest().encode(<span class="string">'hex'</span>)</div><div class="line">TypeError: Unicode-objects must be encoded before hashing</div></pre></td></tr></table></figure>
+<p>看起来 hashlib.md5() 在 Python2.6 和 Python3.4 中的实现也有差异，继续看文档。</p>
+<p>python2.6文档说明：</p>
 <blockquote>
 <p>You can now feed this object with <strong>arbitrary strings</strong> using the update() method.</p>
 </blockquote>
@@ -433,9 +441,13 @@
 <blockquote>
 <p>You can now feed this object with <strong>bytes-like objects (normally bytes)</strong> using the update() method.</p>
 </blockquote>
-<p>依然是编码格式的问题，Python2.6 中参数传入的是 str，但是 Python3.4 中参数需要传入 bytes，那就继续转码吧。<br>再次转码后的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure></p>
-<p>运行后再次报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">33</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest().encode(<span class="string">'hex'</span>)</div><div class="line">AttributeError: <span class="string">'bytes'</span> object has no attribute <span class="string">'encode'</span></div></pre></td></tr></table></figure></p>
-<p>好吧，继续看文档。<br>python2.6文档说明：</p>
+<p>依然是编码格式的问题，Python2.6 中参数传入的是 str，但是 Python3.4 中参数需要传入 bytes，那就继续转码吧。</p>
+<p>再次转码后的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest().encode(<span class="string">'hex'</span>)</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure>
+<p>运行后再次报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">33</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">    test1()</div><div class="line">  File <span class="string">"socket34.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> test1</div><div class="line">    ip_md5 = hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest().encode(<span class="string">'hex'</span>)</div><div class="line">AttributeError: <span class="string">'bytes'</span> object has no attribute <span class="string">'encode'</span></div></pre></td></tr></table></figure>
+<p>好吧，继续看文档。</p>
+<p>python2.6文档说明：</p>
 <blockquote>
 <p><strong>hash.digest()</strong><br>Return the digest of the strings passed to the update() method so far. This is a <strong>string</strong> of digest_size bytes which may contain non-ASCII characters, including null bytes.</p>
 </blockquote>
@@ -443,12 +455,14 @@
 <blockquote>
 <p><strong>hash.digest()</strong><br>Return the digest of the data passed to the update() method so far. This is a <strong>bytes</strong> object of size digest_size which may contain bytes in the whole range from 0 to 255.</p>
 </blockquote>
-<p>这次更严重，encode() 直接用不了，换方法吧，更新后的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"><span class="keyword">import</span> binascii</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = binascii.hexlify(hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest()).decode()</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure></p>
+<p>这次更严重，encode() 直接用不了，换方法吧，更新后的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"><span class="keyword">import</span> binascii</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip).decode(<span class="string">'gbk'</span>) + base_str</div><div class="line">    ip_md5 = binascii.hexlify(hashlib.md5(str_md5.encode(<span class="string">'gbk'</span>)).digest()).decode()</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure>
 <p>运行后的输出结果：</p>
 <blockquote>
 <p>fc138bb4748a18f885cc321c2c6396e2</p>
 </blockquote>
-<p>终于得到了最终结果，激动，不过再回头一看，如果知道这几个函数的使用方式的话，就不需要 decode() 然后又 encode()，比如稍微优化后的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"><span class="keyword">import</span> binascii</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip) + base_str.encode()</div><div class="line">    ip_md5 = binascii.hexlify(hashlib.md5(str_md5).digest()).decode()</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure></p>
+<p>终于得到了最终结果，激动，不过再回头一看，如果知道这几个函数的使用方式的话，就不需要 decode() 然后又 encode()，比如稍微优化后的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> socket</div><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"><span class="keyword">import</span> binascii</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    ip = <span class="string">'192.168.1.12'</span></div><div class="line">    base_str = <span class="string">'testSTR'</span></div><div class="line">    str_md5 = socket.inet_aton(ip) + base_str.encode()</div><div class="line">    ip_md5 = binascii.hexlify(hashlib.md5(str_md5).digest()).decode()</div><div class="line">    print(ip_md5)</div></pre></td></tr></table></figure>
 <h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
 <li>Python3 新增了 bytes 类型，对于 bytes 的转换逻辑要特别清楚，这地方涉及了<strong>编码类型</strong>，要特别关注；</li>
 <li>在使用一些函数前，一定要搞清楚这个函数的具体实现，必须清楚的知道使用了这个函数是什么效果，而不仅仅是看到暂时的效果，或者经验主义的去调用(上面例子的最后一步，其实我一开始不是用的 binascii，而是用的现成的 md5 转换函数，导致 encode() 成了 utf-8 格式，而浪费了不少时间去定位)；</li>
@@ -546,7 +560,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-defaultencode.html">Python2 和 Python3 中默认编码的差异</a></li><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li><li><a href="/heart-flow.html">心流</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li><li><a href="/python-config-build.html">多个版本的 Python 在使用中的灵活切换</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-defaultencode.html">Python2 和 Python3 中默认编码的差异</a></li><li><a href="/heart-flow.html">心流</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li><li><a href="/python-config-build.html">多个版本的 Python 在使用中的灵活切换</a></li></ul>
   
 
 
@@ -610,7 +624,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -621,7 +635,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -632,7 +646,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

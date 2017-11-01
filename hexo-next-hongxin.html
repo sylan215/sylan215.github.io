@@ -52,7 +52,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="红心效果,点击" />
+  <meta name="keywords" content="hexo,next,红心,鼠标点击," />
 
 
 
@@ -68,17 +68,17 @@
 
 
 
-<meta name="description" content="在 hexo\themes\next\source\js\src\ 目录下新增文件 love.js，文件内容如下：">
-<meta name="keywords" content="hexo,next,红心">
+<meta name="description" content="本文主要介绍通过 javascript 脚本实现鼠标点击后，有小红心冒出的特效，下面是详细操作步骤。">
+<meta name="keywords" content="hexo,next,红心,鼠标点击">
 <meta property="og:type" content="article">
 <meta property="og:title" content="next 主题下点击后出现红心效果">
 <meta property="og:url" content="http://www.sylan215.com/hexo-next-hongxin.html">
 <meta property="og:site_name" content="1言5语">
-<meta property="og:description" content="在 hexo\themes\next\source\js\src\ 目录下新增文件 love.js，文件内容如下：">
-<meta property="og:updated_time" content="2017-10-30T18:03:35.000Z">
+<meta property="og:description" content="本文主要介绍通过 javascript 脚本实现鼠标点击后，有小红心冒出的特效，下面是详细操作步骤。">
+<meta property="og:updated_time" content="2017-11-01T15:07:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next 主题下点击后出现红心效果">
-<meta name="twitter:description" content="在 hexo\themes\next\source\js\src\ 目录下新增文件 love.js，文件内容如下：">
+<meta name="twitter:description" content="本文主要介绍通过 javascript 脚本实现鼠标点击后，有小红心冒出的特效，下面是详细操作步骤。">
 
 
 
@@ -406,7 +406,8 @@
       
 
       
-        <p>在 <code>hexo\themes\next\source\js\src\</code> 目录下新增文件 <code>love.js</code>，文件内容如下：<br><a id="more"></a></p>
+        <p>本文主要介绍通过 javascript 脚本实现鼠标点击后，有小红心冒出的特效，下面是详细操作步骤。<br><a id="more"></a></p>
+<p>在 <code>hexo\themes\next\source\js\src\</code> 目录下新增文件 <code>love.js</code>，文件内容如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">e, t, a</span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">n</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        c(<span class="string">".heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;"</span>), o(), r()</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> e = <span class="number">0</span>; e &lt; d.length; e++)</div><div class="line">            d[e].alpha &lt;= <span class="number">0</span> ? (t.body.removeChild(d[e].el), d.splice(e, <span class="number">1</span>)) : (d[e].y--, d[e].scale += <span class="number">.004</span>, d[e].alpha -= <span class="number">.013</span>, d[e].el.style.cssText = <span class="string">"left:"</span> + d[e].x + <span class="string">"px;top:"</span> + d[e].y + <span class="string">"px;opacity:"</span> + d[e].alpha + <span class="string">";transform:scale("</span> + d[e].scale + <span class="string">","</span> + d[e].scale + <span class="string">") rotate(45deg);background:"</span> + d[e].color + <span class="string">";z-index:99999"</span>);</div><div class="line">        requestAnimationFrame(r)</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> t = <span class="string">"function"</span> == <span class="keyword">typeof</span> e.onclick &amp;&amp; e.onclick;</div><div class="line">        e.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">            t &amp;&amp; t(), i(e)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> a = t.createElement(<span class="string">"div"</span>);</div><div class="line">        a.className = <span class="string">"heart"</span>, d.push(&#123;</div><div class="line">            <span class="attr">el</span>: a,</div><div class="line">            <span class="attr">x</span>: e.clientX - <span class="number">5</span>,</div><div class="line">            <span class="attr">y</span>: e.clientY - <span class="number">5</span>,</div><div class="line">            <span class="attr">scale</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">alpha</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">color</span>: s()</div><div class="line">        &#125;), t.body.appendChild(a)</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> a = t.createElement(<span class="string">"style"</span>);</div><div class="line">        a.type = <span class="string">"text/css"</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            a.appendChild(t.createTextNode(e))</div><div class="line">        &#125; <span class="keyword">catch</span> (t) &#123;</div><div class="line">            a.styleSheet.cssText = e</div><div class="line">        &#125;</div><div class="line">        t.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(a)</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"rgb("</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">","</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">","</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">")"</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> d = [];</div><div class="line">    e.requestAnimationFrame = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">                setTimeout(e, <span class="number">1e3</span> / <span class="number">60</span>)</div><div class="line">            &#125;</div><div class="line">    &#125;(), n()</div><div class="line">&#125;(<span class="built_in">window</span>, <span class="built_in">document</span>);</div></pre></td></tr></table></figure>
 <p>然后在文件 <code>hexo\themes\next\layout\_layout.swing</code> 底部的 <code>&lt;/body&gt;</code> 标签上一行增加：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 页面点击小红心 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/js/src/love.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -459,6 +460,8 @@
             <a href="/tags/next/" rel="tag"># next</a>
           
             <a href="/tags/红心/" rel="tag"># 红心</a>
+          
+            <a href="/tags/鼠标点击/" rel="tag"># 鼠标点击</a>
           
         </div>
       
@@ -553,7 +556,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -564,7 +567,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -575,7 +578,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

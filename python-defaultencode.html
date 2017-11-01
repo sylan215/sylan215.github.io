@@ -52,7 +52,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,decode,encode,编码,python3," />
+  <meta name="keywords" content="python,decode,encode,编码,python3默认编码," />
 
 
 
@@ -69,13 +69,13 @@
 
 
 <meta name="description" content="最近在使用 Python3.4 做一些脚本实现，发现对于编码的处理上和 Python2.6 有很大的不同，就此机会把相关知识做个梳理，方便需要的时候查阅。">
-<meta name="keywords" content="python,decode,encode,编码,python3">
+<meta name="keywords" content="python,decode,encode,编码,python3默认编码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python2 和 Python3 中默认编码的差异">
 <meta property="og:url" content="http://www.sylan215.com/python-defaultencode.html">
 <meta property="og:site_name" content="1言5语">
 <meta property="og:description" content="最近在使用 Python3.4 做一些脚本实现，发现对于编码的处理上和 Python2.6 有很大的不同，就此机会把相关知识做个梳理，方便需要的时候查阅。">
-<meta property="og:updated_time" content="2017-10-30T18:02:55.000Z">
+<meta property="og:updated_time" content="2017-11-01T15:19:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python2 和 Python3 中默认编码的差异">
 <meta name="twitter:description" content="最近在使用 Python3.4 做一些脚本实现，发现对于编码的处理上和 Python2.6 有很大的不同，就此机会把相关知识做个梳理，方便需要的时候查阅。">
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">programming</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -364,7 +364,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/python/" itemprop="url" rel="index">
+                  <a href="/categories/编程/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
                 </span>
@@ -406,21 +406,31 @@
       
 
       
-        <p>最近在使用 Python3.4 做一些脚本实现，发现对于编码的处理上和 Python2.6 有很大的不同，就此机会把相关知识做个梳理，方便需要的时候查阅。<br><a id="more"></a><br>先说下概念和差异：</p>
+        <p>最近在使用 Python3.4 做一些脚本实现，发现对于编码的处理上和 Python2.6 有很大的不同，就此机会把相关知识做个梳理，方便需要的时候查阅。<br><a id="more"></a></p>
+<p>先说下概念和差异：</p>
 <blockquote>
 <p><strong>脚本字符编码</strong>：就是解释器解释脚本文件时使用的编码格式，可以通过  <code># -\*- coding: utf-8 -\*-</code> 显式指定<br><strong>解释器字符编码</strong>：解释器内部逻辑过程中对 str 类型进行处理时使用的编码格式<br>Python2 中默认把脚步文件使用 ASCII 来处理(历史原因请 Google)<br>Python2 中字符串除了 str 还有 Unicode，可以用 decode 和 encode 相互转换<br>Python3 中默认把脚步文件使用 UTF-8 来处理(终于默认就支持中文了，赞)<br>Python3 中文本字符和二进制分别使用 str 和 bytes 进行区分，也是使用 decode 和 encode 进行相互转换</p>
 </blockquote>
-<p>关于<strong>默认脚本字符编码</strong>，因为对脚步文件处理的默认编码格式变了，所以很多针对<strong>内容</strong>的处理，都发生了变化，比如下面这个脚本。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div></pre></td></tr></table></figure></p>
-<p>使用 Python3.4 解释器运行结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python34 test.py</div><div class="line">utf<span class="number">-8</span></div><div class="line">中文</div></pre></td></tr></table></figure></p>
-<p>使用 Python2.6 解释器运行结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">  File <span class="string">"test.py"</span>, line <span class="number">4</span></div><div class="line">SyntaxError: Non-ASCII character <span class="string">'\xe4'</span> <span class="keyword">in</span> file test.py on line <span class="number">4</span>, but no encoding declared; see http://www.python.org/peps/pep<span class="number">-0263.</span>html <span class="keyword">for</span> details</div></pre></td></tr></table></figure></p>
-<p>使用 Python2.6 报错就是因为第一条说的「Python2 中默认把脚步文件使用 ASCII 来处理」，但是脚步文件包含了中文，ascii 又没有覆盖中文，所以报错。如果我们把脚步稍作修改：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div></pre></td></tr></table></figure></p>
-<p>增加了脚本字符编码的说明，再次使用 Python2.6 解释器运行结果为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">ascii</div><div class="line">涓枃</div></pre></td></tr></table></figure></p>
+<p>关于<strong>默认脚本字符编码</strong>，因为对脚步文件处理的默认编码格式变了，所以很多针对<strong>内容</strong>的处理，都发生了变化，比如下面这个脚本。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div></pre></td></tr></table></figure>
+<p>使用 Python3.4 解释器运行结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python34 test.py</div><div class="line">utf<span class="number">-8</span></div><div class="line">中文</div></pre></td></tr></table></figure>
+<p>使用 Python2.6 解释器运行结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">  File <span class="string">"test.py"</span>, line <span class="number">4</span></div><div class="line">SyntaxError: Non-ASCII character <span class="string">'\xe4'</span> <span class="keyword">in</span> file test.py on line <span class="number">4</span>, but no encoding declared; see http://www.python.org/peps/pep<span class="number">-0263.</span>html <span class="keyword">for</span> details</div></pre></td></tr></table></figure>
+<p>使用 Python2.6 报错就是因为第一条说的「Python2 中默认把脚步文件使用 ASCII 来处理」，但是脚步文件包含了中文，ascii 又没有覆盖中文，所以报错。如果我们把脚步稍作修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div></pre></td></tr></table></figure>
+<p>增加了脚本字符编码的说明，再次使用 Python2.6 解释器运行结果为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">ascii</div><div class="line">涓枃</div></pre></td></tr></table></figure>
 <p>因为明确指定了脚步文件编码格式为 utf-8，所以读取没问题，也就是说如果 Python2 脚本文件中包含了非 ASCII 字符时，一定要显式指定脚步文件编码格式，对于 Python3 因为默认的脚步文件编码格式就是 utf-8，所以没有这个问题(后面会有文章详细讨论这个问题)。</p>
 <p>但是我们回头看下刚才的输出，结果显示为乱码。</p>
-<p>乱码就涉及到另一个我们要说的不同点<strong>解释器字符编码</strong>，因为我们定义了 utf-8 格式读取脚步内容，但是因为 Python2.6 在 Windows 平台上，默认是使用 gbk 对字符进行 decode 输出，不信你看：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt; python26</div><div class="line">ActivePython <span class="number">2.6</span><span class="number">.6</span><span class="number">.15</span> (ActiveState Software Inc.) based on</div><div class="line">Python <span class="number">2.6</span><span class="number">.6</span> (r266:<span class="number">84292</span>, Aug <span class="number">24</span> <span class="number">2010</span>, <span class="number">16</span>:<span class="number">01</span>:<span class="number">11</span>) [MSC v<span class="number">.1500</span> <span class="number">32</span> bit (Intel)] on</div><div class="line">win32</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s=<span class="string">'中文'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s</div><div class="line"><span class="string">'\xd6\xd0\xce\xc4'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s.decode(<span class="string">'gbk'</span>).encode(<span class="string">'utf-8'</span>)</div><div class="line"><span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'\xd6\xd0\xce\xc4'</span>)</div><div class="line">中文</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>)</div><div class="line">涓枃</div></pre></td></tr></table></figure></p>
-<p>完整描述下上面乱码出现的过程：<br>使用指定的脚本文件编码 utf-8 格式读取了「中文」，读取到的字符串内容为 ‘\xe4\xb8\xad\xe6\x96\x87’，然后输出时 Python2.6 的解释器使用默认解释器字符编码 gbk 格式对读取内容进行 encode 输出，但是之前 utf-8 是 3 个字节长度表示一个中文，而 gbk 是用 2 个字节长度来表示中文，所以之前的 2 个中文，在输出的时候就按照 3 个中文进行编码(encode)，当然就乱码了，仔细看那个乱码，就是 3 个字。</p>
-<p>我们再用代码验证下上面说的内容：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>)</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>.decode(<span class="string">'gbk'</span>, <span class="string">'ignore'</span>))</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>.decode(<span class="string">'gbk'</span>).encode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'中文'</span>.decode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>.decode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>)</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>.decode(<span class="string">'gbk'</span>))</div></pre></td></tr></table></figure></p>
-<p>看看输出结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">ascii</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">中文</div><div class="line">中文</div><div class="line">中文</div><div class="line">中文</div></pre></td></tr></table></figure></p>
+<p>乱码就涉及到另一个我们要说的不同点<strong>解释器字符编码</strong>，因为我们定义了 utf-8 格式读取脚步内容，但是因为 Python2.6 在 Windows 平台上，默认是使用 gbk 对字符进行 decode 输出，不信你看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt; python26</div><div class="line">ActivePython <span class="number">2.6</span><span class="number">.6</span><span class="number">.15</span> (ActiveState Software Inc.) based on</div><div class="line">Python <span class="number">2.6</span><span class="number">.6</span> (r266:<span class="number">84292</span>, Aug <span class="number">24</span> <span class="number">2010</span>, <span class="number">16</span>:<span class="number">01</span>:<span class="number">11</span>) [MSC v<span class="number">.1500</span> <span class="number">32</span> bit (Intel)] on</div><div class="line">win32</div><div class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> <span class="keyword">or</span> <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s=<span class="string">'中文'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s</div><div class="line"><span class="string">'\xd6\xd0\xce\xc4'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s.decode(<span class="string">'gbk'</span>).encode(<span class="string">'utf-8'</span>)</div><div class="line"><span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'\xd6\xd0\xce\xc4'</span>)</div><div class="line">中文</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>)</div><div class="line">涓枃</div></pre></td></tr></table></figure>
+<p>完整描述下上面乱码出现的过程：</p>
+<p>使用指定的脚本文件编码 utf-8 格式读取了「中文」，读取到的字符串内容为 ‘\xe4\xb8\xad\xe6\x96\x87’，然后输出时 Python2.6 的解释器使用默认解释器字符编码 gbk 格式对读取内容进行 encode 输出，但是之前 utf-8 是 3 个字节长度表示一个中文，而 gbk 是用 2 个字节长度来表示中文，所以之前的 2 个中文，在输出的时候就按照 3 个中文进行编码(encode)，当然就乱码了，仔细看那个乱码，就是 3 个字。</p>
+<p>我们再用代码验证下上面说的内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line">print(sys.getdefaultencoding())</div><div class="line">print(<span class="string">'中文'</span>)</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>)</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>.decode(<span class="string">'gbk'</span>, <span class="string">'ignore'</span>))</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>.decode(<span class="string">'gbk'</span>).encode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'中文'</span>.decode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'\xe4\xb8\xad\xe6\x96\x87'</span>.decode(<span class="string">'utf-8'</span>))</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>)</div><div class="line">print(<span class="string">'\xd6\xd0\xce\xc4'</span>.decode(<span class="string">'gbk'</span>))</div></pre></td></tr></table></figure>
+<p>看看输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; python26 test.py</div><div class="line">ascii</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">涓枃</div><div class="line">中文</div><div class="line">中文</div><div class="line">中文</div><div class="line">中文</div></pre></td></tr></table></figure>
 <p>很明显 gbk 格式解码的十六进制字符正常输出为中文了，显式使用 utf-8 对 utf-8 格式的十六进制字符进行 decode 也输出正常了。</p>
 <p>同理，还可以看到另外 2 个现象：</p>
 <blockquote>
@@ -485,7 +495,7 @@
           
             <a href="/tags/编码/" rel="tag"># 编码</a>
           
-            <a href="/tags/python3/" rel="tag"># python3</a>
+            <a href="/tags/python3默认编码/" rel="tag"># python3默认编码</a>
           
         </div>
       
@@ -525,7 +535,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-socket-inet-aton.html">由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</a></li><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li><li><a href="/heart-flow.html">心流</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li><li><a href="/python-config-build.html">多个版本的 Python 在使用中的灵活切换</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-socket-inet-aton.html">由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</a></li><li><a href="/heart-flow.html">心流</a></li><li><a href="/python-wenjianbianli.html">Python 实现文件递归遍历</a></li><li><a href="/python-coding.html">彻底搞懂 Python 编码</a></li></ul>
   
 
 
@@ -589,7 +599,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -600,7 +610,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -611,7 +621,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
