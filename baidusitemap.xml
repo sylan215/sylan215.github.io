@@ -4,6 +4,84 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-config-build.html</loc>
+    <lastmod>2017-11-04T16:32:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>多个版本的 Python 在使用中的灵活切换</title>
+        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
+        
+        <tag>python3</tag>
+         
+        <tag>python多版本共存</tag>
+         
+        <tag>windows python多版本</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/zizhili.html</loc>
+    <lastmod>2017-11-04T16:32:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>当你控制不住自己时你在想什么</title>
+        <pubTime>2017-11-01T16:56:00.000Z</pubTime>
+        
+        <tag>自制力</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://www.sylan215.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/vm-nat.html</loc>
+    <lastmod>2017-11-04T16:26:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 VM 虚拟机端口映射实现数据转发</title>
+        <pubTime>2017-11-04T13:56:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>虚拟机</tag>
+         
+        <tag>映射</tag>
+         
+        <tag>访问</tag>
+         
+        <tag>转发</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="VMware" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/VMware/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/i-am-in-360.html</loc>
     <lastmod>2017-11-03T17:06:12.000Z</lastmod>
     <data>
@@ -17,26 +95,6 @@
            
              
               <breadCrumb title="生活感悟" url="http://www.sylan215.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/zizhili.html</loc>
-    <lastmod>2017-11-01T17:06:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>当你控制不住自己时你在想什么</title>
-        <pubTime>2017-11-01T16:56:00.000Z</pubTime>
-        
-        <tag>自制力</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书笔记" url="http://www.sylan215.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -193,9 +251,9 @@
          
         <tag>python3</tag>
          
-        <tag>encode</tag>
-         
         <tag>decode</tag>
+         
+        <tag>encode</tag>
          
          
            
@@ -222,38 +280,11 @@
          
         <tag>编码</tag>
          
-        <tag>encode</tag>
-         
         <tag>decode</tag>
          
+        <tag>encode</tag>
+         
         <tag>python3默认编码</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-             
-              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/python-config-build.html</loc>
-    <lastmod>2017-11-01T15:18:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>多个版本的 Python 在使用中的灵活切换</title>
-        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
-        
-        <tag>python3</tag>
-         
-        <tag>python多版本共存</tag>
-         
-        <tag>windows python多版本</tag>
          
          
            
