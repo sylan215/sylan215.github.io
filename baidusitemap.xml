@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/git-revert-reset.html</loc>
+    <lastmod>2017-11-06T16:54:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 Git 实现版本回退</title>
+        <pubTime>2017-11-06T17:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>revert</tag>
+         
+        <tag>reset</tag>
+         
+        <tag>回退</tag>
+         
+        <tag>回滚</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/20170910-happy-jiaoshijie.html</loc>
     <lastmod>2017-11-04T17:00:01.000Z</lastmod>
     <data>
