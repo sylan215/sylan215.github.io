@@ -52,7 +52,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,虚拟机,映射,访问,转发," />
+  <meta name="keywords" content="git,revert,reset,回退,回滚," />
 
 
 
@@ -68,24 +68,17 @@
 
 
 
-<meta name="description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta name="keywords" content="git,虚拟机,映射,访问,转发">
+<meta name="description" content="使用 Git 进行版本管理时，肯定不只做提交，有时候也会需要回退修改，并且在回退的基础上进行重新提交，这时候有几个常用的命令就需要用到了，下面分别做介绍。">
+<meta name="keywords" content="git,revert,reset,回退,回滚">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用 VM 虚拟机端口映射实现数据转发">
-<meta property="og:url" content="http://www.sylan215.com/20171104-vm-nat.html">
+<meta property="og:title" content="如何使用 Git 实现版本回退">
+<meta property="og:url" content="http://www.sylan215.com/20171107-git-revert-reset.html">
 <meta property="og:site_name" content="1言5语">
-<meta property="og:description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiip.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijibianji.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijitiquan.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijishezhi.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijitianjia.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiyingshe.png">
-<meta property="og:updated_time" content="2017-11-04T16:26:44.000Z">
+<meta property="og:description" content="使用 Git 进行版本管理时，肯定不只做提交，有时候也会需要回退修改，并且在回退的基础上进行重新提交，这时候有几个常用的命令就需要用到了，下面分别做介绍。">
+<meta property="og:updated_time" content="2017-11-06T16:54:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何使用 VM 虚拟机端口映射实现数据转发">
-<meta name="twitter:description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta name="twitter:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiip.png">
+<meta name="twitter:title" content="如何使用 Git 实现版本回退">
+<meta name="twitter:description" content="使用 Git 进行版本管理时，肯定不只做提交，有时候也会需要回退修改，并且在回退的基础上进行重新提交，这时候有几个常用的命令就需要用到了，下面分别做介绍。">
 
 
 
@@ -114,13 +107,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sylan215.com/20171104-vm-nat.html"/>
+  <link rel="canonical" href="http://www.sylan215.com/20171107-git-revert-reset.html"/>
 
 
 
 
 
-  <title>如何使用 VM 虚拟机端口映射实现数据转发 - 1言5语</title>
+  <title>如何使用 Git 实现版本回退 - 1言5语</title>
   
 
 
@@ -308,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sylan215.com/20171104-vm-nat.html">
+    <link itemprop="mainEntityOfPage" href="http://www.sylan215.com/20171107-git-revert-reset.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sylan215">
@@ -325,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">如何使用 VM 虚拟机端口映射实现数据转发</h2>
+          <h2 class="post-title" itemprop="name headline">如何使用 Git 实现版本回退</h2>
         
 
         <div class="post-meta">
@@ -337,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T21:56:00+08:00">
-                2017-11-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T01:00:00+08:00">
+                2017-11-07
               </time>
             
 
@@ -371,8 +364,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/环境搭建/VMware/" itemprop="url" rel="index">
-                    <span itemprop="name">VMware</span>
+                  <a href="/categories/环境搭建/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -389,9 +382,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/20171104-vm-nat.html#comments" itemprop="discussionUrl">
+                <a href="/20171107-git-revert-reset.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="20171104-vm-nat.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="20171107-git-revert-reset.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,33 +417,36 @@
       
 
       
-        <p>随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：<strong>网络访问</strong>。<br><a id="more"></a></p>
-<p>我的多个物理机的网段是相通的，但是虚拟机和其所在物理机使用的是 NAT 模式，所以虚拟机和非其所在的物理机没法直接连通，可以使用如下命令确认下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; telnet 192.168.252.129 22</div><div class="line">正在连接192.168.252.129...无法打开到主机的连接。 在端口 22: 连接失败</div></pre></td></tr></table></figure>
-<p>下面要介绍的就是如果如何通过 VMware 自身提供的端口转发机制来实现通讯(多谢珂仔的技术支持)。</p>
-<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><p>物理机：10.13.11.12<br>物理机：10.13.11.13<br>虚拟机 IP：搭建在 10.13.11.12 上，IP 为 192.168.252.129<br>虚拟机：VMware 14</p>
-<h4 id="开始设置"><a href="#开始设置" class="headerlink" title="开始设置"></a>开始设置</h4><p><strong>查看虚拟机 IP</strong></p>
-<p>需要先查看当前的虚拟机 IP，因为后面映射的时候，需要填写 IP 和端口信息：</p>
-<p><img src="/upload/image/vm-nat/xunijiip.png" alt="查看虚拟机 IP" title="虚拟机 IP"></p>
-<p><strong>设置入口</strong></p>
-<p>通过 菜单 -&gt; 编辑 -&gt; 虚拟网络编辑器 入口打开设置界面：</p>
-<p><img src="/upload/image/vm-nat/xunijibianji.png" alt="进入虚拟机网络编辑器" title="虚拟机网络编辑器"></p>
-<p><strong>提权</strong></p>
-<p>我当前使用的是 Windows 7 系统，如果当前用户不是系统的那种 administrator 并且系统开启了 UAC 的话，需要先进行操作提权，才能进行设置，提权操作如下：</p>
-<p><img src="/upload/image/vm-nat/xunijitiquan.png" alt="提权" title="操作提权"></p>
-<p><strong>NAT 设置入口</strong></p>
-<p>提权成功后，需要选择当前虚拟机对应的网络，然后点击「NAT 设置」进入详细设置界面：</p>
-<p><img src="/upload/image/vm-nat/xunijishezhi.png" alt="NAT 设置" title="NAT 设置"></p>
-<p><strong>添加端口转发</strong></p>
-<p>在打开的「NAT 设置」界面，点击「添加」来添加对应的转发端口信息：</p>
-<p><img src="/upload/image/vm-nat/xunijitianjia.png" alt="添加端口转发" title="添加端口转发"></p>
-<p><strong>设置映射</strong></p>
-<p>在弹出的对话框，填入物理机的映射端口，注意不能填已经被占用的端口，然后填写虚拟机的 IP 和要转发的端口，比如我要转发的是 git 默认的 ssh 端口，所以填的 22：</p>
-<p><img src="/upload/image/vm-nat/xunijiyingshe.png" alt="设置映射" title="设置映射"></p>
-<p><strong>确认连接</strong></p>
-<p>填写完成后，一路确定下去，直到完成，然后可以在另一台物理机上验证连通性了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; telnet 10.13.11.12 10001</div></pre></td></tr></table></figure>
-<p>确认是可以访问的，这时候在 ssh 配置文件 config 中配置了上述配置后，使用 git 也确认是可以连接到虚拟机的 git 服务器的。</p>
+        <p>使用 Git 进行版本管理时，肯定不只做提交，有时候也会需要回退修改，并且在回退的基础上进行重新提交，这时候有几个常用的命令就需要用到了，下面分别做介绍。<br><a id="more"></a></p>
+<h4 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h4><p>首先，我们查看当前提交记录的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ git log</div><div class="line">commit bfee9d6618bc1deae52ac4a7942b96990bbfe661 (HEAD -&gt; master, origin/master, origin/HEAD)</div><div class="line">Author: sylan215 &lt;sylan215@sylan215.com&gt;</div><div class="line">Date:   Thu Oct 19 15:19:30 2017 +0800</div><div class="line"></div><div class="line">    ddd</div><div class="line"></div><div class="line">commit fbb28efb4e156031704abbf015b12c8ef16031c8</div><div class="line">Author: sylan215 &lt;sylan215@sylan215.com&gt;</div><div class="line">Date:   Thu Oct 19 15:15:26 2017 +0800</div><div class="line"></div><div class="line">    revert</div></pre></td></tr></table></figure>
+<p>如果 log 太多，可以加上参数 <code>--pretty=oneline</code> 使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">bfee9d6618bc1deae52ac4a7942b96990bbfe661 (HEAD -&gt; master, origin/master, origin/HEAD) ddd</div><div class="line">fbb28efb4e156031704abbf015b12c8ef16031c8 revert</div><div class="line">ca0e36b485a3de75e6e11064aecc22ce100652dd new line</div><div class="line">45dcf1bc797a773ca3dee07fc795ef986d10c346 t</div><div class="line">5e29356aa7aea31e7e6bce302abbc2259324d806 test</div></pre></td></tr></table></figure>
+<h4 id="查看命令执行记录"><a href="#查看命令执行记录" class="headerlink" title="查看命令执行记录"></a>查看命令执行记录</h4><p>查看本机命令的执行记录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">bfee9d6 (HEAD -&gt; master, origin/master, origin/HEAD) HEAD@&#123;0&#125;: reset: moving to bfee9d6618bc1deae52ac4a7942b96990bbfe661</div><div class="line">bfee9d6 (HEAD -&gt; master, origin/master, origin/HEAD) HEAD@&#123;1&#125;: commit: ddd</div><div class="line">fbb28ef HEAD@&#123;2&#125;: reset: moving to fbb28efb4e156031704abbf015b12c8ef16031c8</div><div class="line">fbb28ef HEAD@&#123;3&#125;: reset: moving to fbb28efb4e156031704abbf015b12c8ef16031c8</div><div class="line">fbb28ef HEAD@&#123;4&#125;: commit: revert</div><div class="line">ca0e36b HEAD@&#123;5&#125;: reset: moving to ca0e36b485a3de75e6e11064aecc22ce100652dd</div><div class="line">ca0e36b HEAD@&#123;6&#125;: commit: new line</div><div class="line">45dcf1b HEAD@&#123;7&#125;: reset: moving to 45dcf1</div></pre></td></tr></table></figure>
+<h4 id="使用-reset-进行回退"><a href="#使用-reset-进行回退" class="headerlink" title="使用 reset 进行回退"></a>使用 reset 进行回退</h4><p>我们可以通过上述两种方式查看之前的记录，并找到要回退的版本，回退的版本有两种表示方法，一个是 commit id，就是那一串字符，一种是相对 HEAD 的序号，看下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^^</div><div class="line">HEAD is now at ca0e36b new line</div><div class="line"></div><div class="line">$ git reset --har bfee9d</div><div class="line">HEAD is now at bfee9d6 ddd</div></pre></td></tr></table></figure>
+<p>我们先使用 <code>HEAD^^</code> 回退了两个版本，然后又使用 <code>bfee9d</code> 这个 commit id 回到了最新版本，注意 <code>HEAD</code> 方式只能回退到旧版本，没法往新版本前进， commit id 的方式可以回退到任意有效 id 的版本，至于怎么查看版本对应的 id 请看最开始介绍的 <code>git log</code> 和 <code>git reflog</code> 命令。</p>
+<blockquote>
+<p>这个命令我们还可变相达成丢弃目前所有修改的效果，直接运行 <code>git reset --hard HEAD</code> 就行。</p>
+</blockquote>
+<p>回退版本后，我们重新进行修改，并提交，会发现有如下报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ git add .</div><div class="line"></div><div class="line">$ git commit -am &quot;test reset&quot;</div><div class="line">[master 88b1dc8] test reset</div><div class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</div><div class="line"></div><div class="line">$ git push</div><div class="line">To 192.168.252.130:/srv/myfiles.git</div><div class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</div><div class="line">error: failed to push some refs to &apos;git@192.168.252.130:/srv/myfiles.git&apos;</div><div class="line">hint: Updates were rejected because the tip of your current branch is behind</div><div class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</div><div class="line">hint: &apos;git pull ...&apos;) before pushing again.</div><div class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</div></pre></td></tr></table></figure>
+<p>解决方法是使用命令 <code>git push -f</code> 解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git push -f</div><div class="line">Counting objects: 3, done.</div><div class="line">Compressing objects: 100% (2/2), done.</div><div class="line">Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.</div><div class="line">Total 3 (delta 0), reused 0 (delta 0)</div><div class="line">To 192.168.252.130:/srv/myfiles.git</div><div class="line"> + bfee9d6...88b1dc8 master -&gt; master (forced update)</div></pre></td></tr></table></figure>
+<p>注意：<code>git push -f</code> 是强制提交的意思，如果和 reset 结合使用，就会把最新版本到 reset 到的版本之间的所有 commit 全部抹掉了，这在多人协作时，要特别注意。</p>
+<p>具体我们通过命令后 <code>git long --pretty=oneline</code> 看得更直观：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">88b1dc8cb7228f7d1fe14d510a62201a9d584118 (HEAD -&gt; master, origin/master, origin/HEAD) test reset</div><div class="line">ca0e36b485a3de75e6e11064aecc22ce100652dd new line</div><div class="line">45dcf1bc797a773ca3dee07fc795ef986d10c346 t</div><div class="line">5e29356aa7aea31e7e6bce302abbc2259324d806 test</div></pre></td></tr></table></figure>
+<p>和最上面那一次的输出对比，commit id ca0e36b485a3de75e6e11064aecc22ce100652dd 之后的两个提交 id 都被回退了(fbb28efb4e156031704abbf015b12c8ef16031c8 和 bfee9d6618bc1deae52ac4a7942b96990bbfe661)。</p>
+<h4 id="另一种温柔的回退方式"><a href="#另一种温柔的回退方式" class="headerlink" title="另一种温柔的回退方式"></a>另一种温柔的回退方式</h4><p>使用 reset 是直接抹杀掉 commit 的方式，另外还有一种真正的「回退」命令，就是 revert，它的效果时，在当前版本基础上，删掉要回退版本的修改内容后新建一次提交。<br>我们看看效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">9eecd39b8e6a2109c3678c42dc034db2190840f6 (HEAD -&gt; master, origin/master, origin/HEAD) change</div><div class="line">e4f5e6920c22b748d765824e0be21015332fafa4 init</div><div class="line"></div><div class="line">$ git revert 9eec</div><div class="line">[master f7c9eb4] Revert &quot;change&quot;</div><div class="line"> 1 file changed, 1 insertion(+), 2 deletions(-)</div><div class="line"></div><div class="line">$ git log --pretty=oneline</div><div class="line">f7c9eb4120d368915a6e5491bf85dc5cd87a424f (HEAD -&gt; master) Revert &quot;change&quot;</div><div class="line">9eecd39b8e6a2109c3678c42dc034db2190840f6 (origin/master, origin/HEAD) change</div><div class="line">e4f5e6920c22b748d765824e0be21015332fafa4 init</div></pre></td></tr></table></figure>
+<p>我们在最新版本的基础上，把最后一次提交的修改给回退了，同时用回退后版本生成了一次提交，并生成了新的 commit id，这样所有的操作 log 均得到了正确的保留。</p>
+<p>注意：命令 revert 是指回退<strong>指定版本的修改内容</strong>，而不是指<strong>指定版本到当前版本的所有内容</strong>，所以如果给定的 commit id 不是当前版本的最新 commit id，那么就会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">45734f3dc12f45e78504bd0fb52ba334c0ae2c9f (HEAD -&gt; master, origin/master, origin/HEAD) test</div><div class="line">7c82b777a40dfb24fc1bba404be0daa3b3923a95 test revert</div><div class="line">f7c9eb4120d368915a6e5491bf85dc5cd87a424f Revert &quot;change&quot;</div><div class="line">9eecd39b8e6a2109c3678c42dc034db2190840f6 change</div><div class="line">e4f5e6920c22b748d765824e0be21015332fafa4 init</div><div class="line"></div><div class="line">$ git revert 7c82b</div><div class="line">error: could not revert 7c82b77... test revert</div><div class="line">hint: after resolving the conflicts, mark the corrected paths</div><div class="line">hint: with &apos;git add &lt;paths&gt;&apos; or &apos;git rm &lt;paths&gt;&apos;</div><div class="line">hint: and commit the result with &apos;git commit&apos;</div><div class="line"></div><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Your branch is up-to-date with &apos;origin/master&apos;.</div><div class="line"></div><div class="line">You are currently reverting commit 7c82b77.</div><div class="line">  (fix conflicts and run &quot;git revert --continue&quot;)</div><div class="line">  (use &quot;git revert --abort&quot; to cancel the revert operation)</div><div class="line"></div><div class="line">Unmerged paths:</div><div class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</div><div class="line"></div><div class="line">        both modified:   test2.txt</div><div class="line"></div><div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div></pre></td></tr></table></figure>
+<p>如果上图，我们跳过了 45734 的修改，想只回退 7c82b 的修改，这时候就提示冲突了，这时候要么手工修改冲突，要么取消 revert 后，一次指定多个 revert id 来实现，下面是一次使用多个 revert id 进行实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">$ git revert --abort</div><div class="line"></div><div class="line">$ git log --pretty=oneline</div><div class="line">45734f3dc12f45e78504bd0fb52ba334c0ae2c9f (HEAD -&gt; master, origin/master, origin/HEAD) test</div><div class="line">7c82b777a40dfb24fc1bba404be0daa3b3923a95 test revert</div><div class="line">f7c9eb4120d368915a6e5491bf85dc5cd87a424f Revert &quot;change&quot;</div><div class="line">9eecd39b8e6a2109c3678c42dc034db2190840f6 change</div><div class="line">e4f5e6920c22b748d765824e0be21015332fafa4 init</div><div class="line"></div><div class="line">$ git revert 45734 7c82b</div><div class="line">[master 8140eb0] Revert &quot;test&quot;</div><div class="line"> 1 file changed, 1 insertion(+), 3 deletions(-)</div><div class="line">[master 191816d] Revert &quot;test revert&quot;</div><div class="line"> 1 file changed, 1 insertion(+), 2 deletions(-)</div><div class="line"></div><div class="line">$ git log --pretty=oneline</div><div class="line">191816d84c02a4ba591d3739739ddd0df114d7f1 (HEAD -&gt; master) Revert &quot;test revert&quot;</div><div class="line">8140eb0f69493f1a6306b0e92822f07c049a7a50 Revert &quot;test&quot;</div><div class="line">45734f3dc12f45e78504bd0fb52ba334c0ae2c9f (origin/master, origin/HEAD) test</div><div class="line">7c82b777a40dfb24fc1bba404be0daa3b3923a95 test revert</div><div class="line">f7c9eb4120d368915a6e5491bf85dc5cd87a424f Revert &quot;change&quot;</div><div class="line">9eecd39b8e6a2109c3678c42dc034db2190840f6 change</div><div class="line">e4f5e6920c22b748d765824e0be21015332fafa4 init</div></pre></td></tr></table></figure>
+<p>这时候如果我们查看文件，会发现 45734 和 7c82b 的内容都被回退了，并新生成了两次的 commit(每个 commit id 的回退会单独生成一条记录)。</p>
+<p>特别说明一下，为了保证 revert 的效果，建议每次提交修改的时候，尽量减少非耦合文件的一起提交，分批提交可以更利于以后的 revert。</p>
 
       
     </div>
@@ -479,7 +475,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.sylan215.com/20171104-vm-nat.html" title="如何使用 VM 虚拟机端口映射实现数据转发">http://www.sylan215.com/20171104-vm-nat.html</a>
+    <a href="http://www.sylan215.com/20171107-git-revert-reset.html" title="如何使用 Git 实现版本回退">http://www.sylan215.com/20171107-git-revert-reset.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -496,13 +492,13 @@
           
             <a href="/tags/git/" rel="tag"># git</a>
           
-            <a href="/tags/虚拟机/" rel="tag"># 虚拟机</a>
+            <a href="/tags/revert/" rel="tag"># revert</a>
           
-            <a href="/tags/映射/" rel="tag"># 映射</a>
+            <a href="/tags/reset/" rel="tag"># reset</a>
           
-            <a href="/tags/访问/" rel="tag"># 访问</a>
+            <a href="/tags/回退/" rel="tag"># 回退</a>
           
-            <a href="/tags/转发/" rel="tag"># 转发</a>
+            <a href="/tags/回滚/" rel="tag"># 回滚</a>
           
         </div>
       
@@ -515,18 +511,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20171107-git-revert-reset.html" rel="next" title="如何使用 Git 实现版本回退">
-                <i class="fa fa-chevron-left"></i> 如何使用 Git 实现版本回退
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/i-am-in-360.html" rel="prev" title="我和 360 不得不说的事">
-                我和 360 不得不说的事 <i class="fa fa-chevron-right"></i>
+              <a href="/20171104-vm-nat.html" rel="prev" title="如何使用 VM 虚拟机端口映射实现数据转发">
+                如何使用 VM 虚拟机端口映射实现数据转发 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -542,7 +534,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/20171107-git-revert-reset.html">如何使用 Git 实现版本回退</a></li><li><a href="/git-config-on-ubuntu.html">手把手教你在 Ubuntu 上搭建 Git 服务器</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/20171104-vm-nat.html">如何使用 VM 虚拟机端口映射实现数据转发</a></li><li><a href="/git-config-on-ubuntu.html">手把手教你在 Ubuntu 上搭建 Git 服务器</a></li></ul>
   
 
 
@@ -683,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始设置"><span class="nav-number">2.</span> <span class="nav-text">开始设置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看提交日志"><span class="nav-number">1.</span> <span class="nav-text">查看提交日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看命令执行记录"><span class="nav-number">2.</span> <span class="nav-text">查看命令执行记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-reset-进行回退"><span class="nav-number">3.</span> <span class="nav-text">使用 reset 进行回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#另一种温柔的回退方式"><span class="nav-number">4.</span> <span class="nav-text">另一种温柔的回退方式</span></a></li></ol></div>
             
 
           </div>
@@ -835,9 +827,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sylan215.com/20171104-vm-nat.html';
-          this.page.identifier = '20171104-vm-nat.html';
-          this.page.title = '如何使用 VM 虚拟机端口映射实现数据转发';
+          this.page.url = 'http://www.sylan215.com/20171107-git-revert-reset.html';
+          this.page.identifier = '20171107-git-revert-reset.html';
+          this.page.title = '如何使用 Git 实现版本回退';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sylan215.disqus.com/embed.js';
