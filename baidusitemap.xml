@@ -4,6 +4,35 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/20171108-OOM-openfiles.html</loc>
+    <lastmod>2017-11-07T15:28:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>内存不足导致 nginx 崩溃的原因分析</title>
+        <pubTime>2017-11-07T17:00:00.000Z</pubTime>
+        
+        <tag>ulimit</tag>
+         
+        <tag>Ubuntu</tag>
+         
+        <tag>内存不足</tag>
+         
+        <tag>open files</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="linux" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/python-config-build.html</loc>
     <lastmod>2017-11-07T15:24:17.000Z</lastmod>
     <data>
@@ -51,35 +80,6 @@
           
              
               <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/20171108-OOM-openfiles.html</loc>
-    <lastmod>2017-11-07T15:16:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>内存不足到 nginx 崩溃的原因分析</title>
-        <pubTime>2017-11-07T17:00:00.000Z</pubTime>
-        
-        <tag>ulimit</tag>
-         
-        <tag>Ubuntu</tag>
-         
-        <tag>内存不足</tag>
-         
-        <tag>open files</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="linux" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/linux/"/>
           
         </display>
     </data>
@@ -353,9 +353,9 @@
         
         <tag>python</tag>
          
-        <tag>python3</tag>
-         
         <tag>编码</tag>
+         
+        <tag>python3</tag>
          
         <tag>decode</tag>
          
