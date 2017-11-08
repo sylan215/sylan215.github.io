@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/20171109-compress-with-tinypng.html</loc>
+    <lastmod>2017-11-08T15:21:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 tinypng 进行批量压缩</title>
+        <pubTime>2017-11-08T17:00:00.000Z</pubTime>
+        
+        <tag>环境</tag>
+         
+        <tag>tinypng</tag>
+         
+        <tag>存储格式</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/20171108-OOM-openfiles.html</loc>
     <lastmod>2017-11-07T15:28:42.000Z</lastmod>
     <data>
