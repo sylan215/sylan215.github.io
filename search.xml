@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[我认识的老周]]></title>
+    <url>%2F20171110-dianfuzhe.html</url>
+    <content type="text"><![CDATA[10 月 24 号，老周新书《颠覆者》在京东预售，我立马预定了一本，11 月 6 号书终于拿到手。 因为是预售，送货比平时慢了点，但还是比大多数人都早拿到手，书挺厚的，将近 400 页，预售是 35.5 人民币，挺值的。 打开包装后，立马有一股淡淡的书香扑鼻而来，那是纸质的味道。 去掉封皮就迫不及待的翻看了目录，第一感觉就是用的纸真心的不错，是我今年读过的书中质量最好的了，纸张的厚度和手感那是杠杠的，这倒很符合老周的性格—实在，做什么事情都是满满的诚意。 上班时间比较忙，就只细看了开头一页的照片，只是从照片看，完全看不出老周所说的「不羁」，当然也看不出他实际表现出来的聪明。正应了那句老话「人不可貌相」。 这几天利用早上的时间，把头四章先看完了，已经禁不住的要发一些感慨了，所以就有了下面的文字。 首先，老周真的太聪明。 小学一年级就直接跳级，虽然最后因为个子小被强行安排到二年级，但是一直「吃不饱」还是很好的说明了他的聪明程度，只用了三分之一的精力就搞定了学校的功课，我的天，厉害(想想现在辅导闺女作业的场景，哎，头疼)。 最主要的是，过剩的精力并没有浪费掉，小小的年纪就开始利用这些时间看《林海雪原》、《敌后游击队》、《金银岛》、《水浒传》、《三国演义》和《西游记》，要知道，我是上了大学才看的《三国演义》，难怪自己目前写个东西出来都这么费劲，赶紧找个旮旯补习去。 还有一个体现老周聪明的地方就是升学考试，虽然整天看他调皮捣蛋、吊儿郎当的样子，但是初中他考了十分牛的郑州八中，之后又考上了郑州最好的高中–郑州一中，在转校到不是特别牛的郑州九中后，成绩依然名列前茅，最后成功拿到西安交大的保送名额。 我只想说一个字，大写的服。 印象第二点，「熊孩子」。 换一个词就是，恶作剧。 具体表现就是 上课说话、做小动作不在话下；被老师点名、叫到教室前面罚站成了家常便饭。 还自学了画画，画出老师猪头样式的漫画像，「栩栩如生」，并在全班传阅。 还会翻墙到学校去把教鞭掰成两截，让老师在第二天用的时候出丑。 这些藐视权威的做法，和我理解的熊孩子如出一撤，这也不禁让我想起自己一年级被罚站的场景，真真切切。 第三点，清晰的自我认知和定位。 从小就有自己的主见，对于自己喜欢的东西和事情，总是立马行动，比如小学和初中时期，分别经历过读书、画画、无线电、集邮等等，都是喜欢了就立马去做了，都还做的不赖；比如初中时因为看上了一个玩具，甘心拿自己最喜欢的开国大典邮票和朋友交换，目的性非常明确，不会计较一时得失。 当然确定最终的职业目标还是在高中的时候。 他在高二的一次班会中说到 我的理想很明确，我这辈子就要做一个电脑软件的开发者。做一款产品，改变世界。 要知道很多人到大学毕业，甚至工作很多年之后，依然有不明白自己的目标和方向的。这么早就确定了正确的目标，并持之以恒的坚持，并最后真的实现了愿望，不得不说不太八面玲珑的老周是值得佩服的。 最后一点，感恩的心。 从目前的几篇文字来看，老周对他小学五年级的数学老师王芙蓉、高中班主任徐良都是印象深刻，并十分感激的。 比如王芙蓉老师，是他在 5 年小学期间唯一感谢的老师，因为王老师的包容，让他放下了自己「不羁」的面具，从而在数学上花费了不少力气去学习，恰好也为后面的计算机学习打好了基础。 另一位徐良老师，则是老周在第四章开篇就提到的老师，是除了王芙蓉老师之后另一个让自己信服的老师，也因为徐良老师，让自己对物理的兴趣有了发挥和释放的地方。 对于这一点，老周的原话是这样的： 转入九中之前，除了小学期间的王芙蓉老师，我遇到的老师都是对抗型的，直到遇到我的高中班主任徐良老师。 好了，才看了五分之一，先简短汇总到这，我要继续读去了。]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>颠覆者</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何使用 tinypng 进行批量压缩]]></title>
     <url>%2F20171109-compress-with-tinypng.html</url>
     <content type="text"><![CDATA[不管是博客还是产品中，都会涉及图片的使用，但是如果图片体检太大，会影响使用体验，所以网上有各种各样的支持图片压缩的网站，tinypng 是其中的佼佼者。 今天要介绍的就是如何通过 python 脚本实现一键压缩。 直接上脚本： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970# -*- coding: utf-8 -*-"""脚本功能说明：使用 tinypng，一键批量压缩指定文件(夹)所有文件"""import osimport sysimport tinifytinify.key = "你自己申请的 key" # AppKeydef get_file_dir(file): """获取文件目录通用函数""" fullpath = os.path.abspath(os.path.realpath(file)) return os.path.dirname(fullpath)def check_suffix(file_path): """检查指定文件的后缀是否符合要求""" file_path_lower = file_path.lower() return (file_path_lower.endswith('.png') or file_path_lower.endswith('.jpg') or file_path_lower.endswith('.jpeg'))def compress_by_tinypng(input_file): """使用 tinypng 进行压缩，中文前面的 u 是为了兼容 py2.7""" if not check_suffix(input_file): print(u'只支持png\\jpg\\jepg格式文件：' + input_file) return file_name = os.path.basename(input_file) output_path = os.path.join(get_file_dir(sys.argv[0]), 'tinypng') output_file = os.path.join(output_path, file_name) print(output_file) if not os.path.isdir(output_path): os.makedirs(output_path) try: source = tinify.from_file(input_file) source.to_file(output_file) print(u'文件压缩成功：' + input_file) old_size = os.path.getsize(input_file) print(u'压缩前文件大小：%d 字节' % old_size) new_size = os.path.getsize(output_file) print(u'文件保存地址：%s' % output_file) print(u'压缩后文件大小：%d 字节' % new_size) print(u'压缩比： %d%%' % ((old_size - new_size) * 100 / old_size)) except tinify.errors.AccountError: print(u'Key 使用量已超，请更新 Key，并使用命令[Usage] %s [filepath] [key]运行' % os.path.basename(sys.argv[0]))def check_path(input_path): """如果输入的是文件则直接压缩，如果是文件夹则先遍历""" if os.path.isfile(input_path): compress_by_tinypng(input_path) elif os.path.isdir(input_path): dirlist = os.walk(input_path) for root, dirs, files in dirlist: for filename in files: compress_by_tinypng(os.path.join(root, filename)) else: print(u'目标文件(夹)不存在，请确认后重试。')if __name__ == '__main__': len_param = len(sys.argv) if len_param != 2 and len_param != 3: print('[Usage] %s [filepath]' % os.path.basename(sys.argv[0])) elif len_param == 3: tinify.key = sys.argv[2] check_path(sys.argv[1]) else: check_path(sys.argv[1]) 使用说明1. 请先安装 tinify 的依赖库：1python -m pip install tinify 2. 申请 tinify key到 https://tinypng.com/developers 申请自己的 key，每个 key 每个月可以压缩 500 个文件。 3. 执行脚本申请完 key 之后，更新到代码段中的：1tinify.key = "your key" # AppKey 然后带参数执行脚本即可。 带的第一个参数是必选的，可以是文件，也可以是文件夹。 第二个参数是可选的，自定义 key，如果输入了第三个参数，则优先使用自定义 key。 压缩后的文件，默认输出到当前脚本所在目录下的 tinypng 文件夹中，如果要输出到其他位置，可以自行修改脚本实现。 PS：已使用 Python2.7 和 Python3.4 亲测有效，其他 Python 版本如果有异常，请反馈。 更详细的说明请跳转到项目地址：https://github.com/sylan215/compress-with-tinypng，欢迎大家 star，并一起丰富这个脚本的功能。]]></content>
@@ -210,8 +221,8 @@
       <tags>
         <tag>python</tag>
         <tag>编码</tag>
-        <tag>decode</tag>
         <tag>encode</tag>
+        <tag>decode</tag>
         <tag>python3默认编码</tag>
       </tags>
   </entry>
@@ -225,10 +236,10 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>编码</tag>
         <tag>python3</tag>
-        <tag>decode</tag>
+        <tag>编码</tag>
         <tag>encode</tag>
+        <tag>decode</tag>
       </tags>
   </entry>
   <entry>
