@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/20171121-zhenxiang.html</loc>
+    <lastmod>2017-11-20T17:52:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>是的，你知道的真相都是假的</title>
+        <pubTime>2017-11-20T17:49:41.000Z</pubTime>
+        
+        <tag>真相</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活感悟" url="http://www.sylan215.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/20171115-dianfuzhe3.html</loc>
     <lastmod>2017-11-14T17:54:31.000Z</lastmod>
     <data>
@@ -446,13 +466,13 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>python3</tag>
          
         <tag>decode</tag>
          
         <tag>encode</tag>
+         
+        <tag>编码</tag>
          
          
            
@@ -477,11 +497,11 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>decode</tag>
          
         <tag>encode</tag>
+         
+        <tag>编码</tag>
          
         <tag>python3默认编码</tag>
          
@@ -506,13 +526,13 @@
         <title>彻底搞懂 Python 编码</title>
         <pubTime>2017-10-19T16:09:00.000Z</pubTime>
         
+        <tag>编码</tag>
+         
         <tag>python3编码</tag>
          
         <tag>中文</tag>
          
         <tag>utf-8</tag>
-         
-        <tag>编码</tag>
          
         <tag>汉字</tag>
          
