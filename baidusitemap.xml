@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/20171128-writting.html</loc>
+    <lastmod>2017-11-29T10:01:31.366Z</lastmod>
+    <data>
+        <display>
+        <title>在这个对写作者最好的时代，你凭什么不写作</title>
+        <pubTime>2017-11-27T21:50:29.000Z</pubTime>
+        
+        <tag>写作</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活感悟" url="http://www.sylan215.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/20171115-dianfuzhe3.html</loc>
     <lastmod>2017-11-28T21:53:11.831Z</lastmod>
     <data>
@@ -19,26 +39,6 @@
            
              
               <breadCrumb title="读书笔记" url="http://www.sylan215.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/20171128-writting.html</loc>
-    <lastmod>2017-11-28T21:51:32.034Z</lastmod>
-    <data>
-        <display>
-        <title>20171128-writting</title>
-        <pubTime>2017-11-27T21:50:29.000Z</pubTime>
-        
-        <tag>写作</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活感悟" url="http://www.sylan215.com/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
           
         </display>
     </data>
@@ -528,13 +528,13 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>python3</tag>
          
-        <tag>encode</tag>
+        <tag>编码</tag>
          
         <tag>decode</tag>
+         
+        <tag>encode</tag>
          
          
            
@@ -561,9 +561,9 @@
          
         <tag>编码</tag>
          
-        <tag>encode</tag>
-         
         <tag>decode</tag>
+         
+        <tag>encode</tag>
          
         <tag>python3默认编码</tag>
          
