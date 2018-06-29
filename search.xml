@@ -273,10 +273,10 @@
         <category>python</category>
       </categories>
       <tags>
+        <tag>编码</tag>
         <tag>python3编码</tag>
         <tag>中文</tag>
         <tag>utf-8</tag>
-        <tag>编码</tag>
         <tag>汉字</tag>
       </tags>
   </entry>
@@ -290,9 +290,9 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>编码</tag>
         <tag>decode</tag>
         <tag>encode</tag>
+        <tag>编码</tag>
         <tag>python3默认编码</tag>
       </tags>
   </entry>
@@ -306,10 +306,10 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>python3</tag>
-        <tag>编码</tag>
         <tag>decode</tag>
         <tag>encode</tag>
+        <tag>编码</tag>
+        <tag>python3</tag>
       </tags>
   </entry>
   <entry>
