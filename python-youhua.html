@@ -52,7 +52,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,虚拟机,映射,访问,转发," />
+  <meta name="keywords" content="python,文件,文件夹,遍历,SFTP," />
 
 
 
@@ -68,24 +68,17 @@
 
 
 
-<meta name="description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta name="keywords" content="git,虚拟机,映射,访问,转发">
+<meta name="description" content="最近在用 Python 写一个一键替换文件的脚本文件，大概的功能是，向程序传递一个本地或 SFTP 目录的参数，程序可以把指定目录所有文件替换到特定应用程序的对应目录。程序提供了如下 2 种命令行调用：">
+<meta name="keywords" content="python,文件,文件夹,遍历,SFTP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何使用 VM 虚拟机端口映射实现数据转发">
-<meta property="og:url" content="http://www.sylan215.com/20171104-vm-nat.html">
+<meta property="og:title" content="Python 代码优化实践">
+<meta property="og:url" content="http://www.sylan215.com/python-youhua.html">
 <meta property="og:site_name" content="1言5语">
-<meta property="og:description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiip.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijibianji.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijitiquan.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijishezhi.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijitianjia.png">
-<meta property="og:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiyingshe.png">
-<meta property="og:updated_time" content="2017-11-04T16:26:44.000Z">
+<meta property="og:description" content="最近在用 Python 写一个一键替换文件的脚本文件，大概的功能是，向程序传递一个本地或 SFTP 目录的参数，程序可以把指定目录所有文件替换到特定应用程序的对应目录。程序提供了如下 2 种命令行调用：">
+<meta property="og:updated_time" content="2018-07-08T14:44:31.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何使用 VM 虚拟机端口映射实现数据转发">
-<meta name="twitter:description" content="随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：网络访问。">
-<meta name="twitter:image" content="http://www.sylan215.com/upload/image/vm-nat/xunijiip.png">
+<meta name="twitter:title" content="Python 代码优化实践">
+<meta name="twitter:description" content="最近在用 Python 写一个一键替换文件的脚本文件，大概的功能是，向程序传递一个本地或 SFTP 目录的参数，程序可以把指定目录所有文件替换到特定应用程序的对应目录。程序提供了如下 2 种命令行调用：">
 
 
 
@@ -114,13 +107,13 @@
 
 
 
-  <link rel="canonical" href="http://www.sylan215.com/20171104-vm-nat.html"/>
+  <link rel="canonical" href="http://www.sylan215.com/python-youhua.html"/>
 
 
 
 
 
-  <title>如何使用 VM 虚拟机端口映射实现数据转发 - 1言5语</title>
+  <title>Python 代码优化实践 - 1言5语</title>
   
 
 
@@ -308,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.sylan215.com/20171104-vm-nat.html">
+    <link itemprop="mainEntityOfPage" href="http://www.sylan215.com/python-youhua.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sylan215">
@@ -325,7 +318,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">如何使用 VM 虚拟机端口映射实现数据转发</h2>
+          <h2 class="post-title" itemprop="name headline">Python 代码优化实践</h2>
         
 
         <div class="post-meta">
@@ -337,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T21:56:00+08:00">
-                2017-11-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-09T22:27:58+08:00">
+                2018-07-09
               </time>
             
 
@@ -360,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
-                    <span itemprop="name">环境搭建</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -371,8 +364,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/环境搭建/VMware/" itemprop="url" rel="index">
-                    <span itemprop="name">VMware</span>
+                  <a href="/categories/编程/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -389,9 +382,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/20171104-vm-nat.html#comments" itemprop="discussionUrl">
+                <a href="/python-youhua.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="20171104-vm-nat.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="python-youhua.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,33 +417,32 @@
       
 
       
-        <p>随着虚拟化技术的应用，很多环境配置都是在虚拟机中进行的，比如前几天我搭建的 Git 服务器，就是在一个物理机的虚拟机上搭建的，一方面可以做环境隔离，另一方面也方便管理，但是这样会带来另一个新的问题：<strong>网络访问</strong>。<br><a id="more"></a></p>
-<p>我的多个物理机的网段是相通的，但是虚拟机和其所在物理机使用的是 NAT 模式，所以虚拟机和非其所在的物理机没法直接连通，可以使用如下命令确认下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; telnet 192.168.252.129 22</div><div class="line">正在连接192.168.252.129...无法打开到主机的连接。 在端口 22: 连接失败</div></pre></td></tr></table></figure>
-<p>下面要介绍的就是如果如何通过 VMware 自身提供的端口转发机制来实现通讯(多谢珂仔的技术支持)。</p>
-<h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><p>物理机：10.13.11.12<br>物理机：10.13.11.13<br>虚拟机 IP：搭建在 10.13.11.12 上，IP 为 192.168.252.129<br>虚拟机：VMware 14</p>
-<h4 id="开始设置"><a href="#开始设置" class="headerlink" title="开始设置"></a>开始设置</h4><p><strong>查看虚拟机 IP</strong></p>
-<p>需要先查看当前的虚拟机 IP，因为后面映射的时候，需要填写 IP 和端口信息：</p>
-<p><img src="/upload/image/vm-nat/xunijiip.png" alt="查看虚拟机 IP" title="虚拟机 IP"></p>
-<p><strong>设置入口</strong></p>
-<p>通过 菜单 -&gt; 编辑 -&gt; 虚拟网络编辑器 入口打开设置界面：</p>
-<p><img src="/upload/image/vm-nat/xunijibianji.png" alt="进入虚拟机网络编辑器" title="虚拟机网络编辑器"></p>
-<p><strong>提权</strong></p>
-<p>我当前使用的是 Windows 7 系统，如果当前用户不是系统的那种 administrator 并且系统开启了 UAC 的话，需要先进行操作提权，才能进行设置，提权操作如下：</p>
-<p><img src="/upload/image/vm-nat/xunijitiquan.png" alt="提权" title="操作提权"></p>
-<p><strong>NAT 设置入口</strong></p>
-<p>提权成功后，需要选择当前虚拟机对应的网络，然后点击「NAT 设置」进入详细设置界面：</p>
-<p><img src="/upload/image/vm-nat/xunijishezhi.png" alt="NAT 设置" title="NAT 设置"></p>
-<p><strong>添加端口转发</strong></p>
-<p>在打开的「NAT 设置」界面，点击「添加」来添加对应的转发端口信息：</p>
-<p><img src="/upload/image/vm-nat/xunijitianjia.png" alt="添加端口转发" title="添加端口转发"></p>
-<p><strong>设置映射</strong></p>
-<p>在弹出的对话框，填入物理机的映射端口，注意不能填已经被占用的端口，然后填写虚拟机的 IP 和要转发的端口，比如我要转发的是 git 默认的 ssh 端口，所以填的 22：</p>
-<p><img src="/upload/image/vm-nat/xunijiyingshe.png" alt="设置映射" title="设置映射"></p>
-<p><strong>确认连接</strong></p>
-<p>填写完成后，一路确定下去，直到完成，然后可以在另一台物理机上验证连通性了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; telnet 10.13.11.12 10001</div></pre></td></tr></table></figure>
-<p>确认是可以访问的，这时候在 ssh 配置文件 config 中配置了上述配置后，使用 git 也确认是可以连接到虚拟机的 git 服务器的。</p>
+        <p>最近在用 Python 写一个一键替换文件的脚本文件，大概的功能是，向程序传递一个本地或 SFTP 目录的参数，程序可以把指定目录所有文件替换到特定应用程序的对应目录。程序提供了如下 2 种命令行调用：<br><a id="more"></a></p>
+<blockquote>
+<p>Usage: demo.py [sourcedir]<br>Usage: demo.py [sourcedir] bydir</p>
+</blockquote>
+<p>第一种调用的实际操作是：读取特定应用程序目录所有文件，并获取全路径作为一个集合，再把参数文件夹中文件按文件名与集合中文件进行匹配，如果匹配上则执行替换操作。</p>
+<p>第二种调用的实际操作是：按参数文件夹的目录存放的路径，完整替换到应用程序的对应目录。</p>
+<p>下面是最初的代码实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#执行本地文件替换的具体操作</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReplaceLocalFiles</span><span class="params">(filepath, context, filecontext, softpath, bydir)</span>:</span></div><div class="line">    <span class="keyword">if</span> (<span class="string">":"</span> <span class="keyword">not</span> <span class="keyword">in</span> filepath) <span class="keyword">or</span> (<span class="keyword">not</span> os.path.isdir(filepath)):</div><div class="line">        printandwritelog(<span class="string">u"目标路径有误，请确认是目录后再重试"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span></div><div class="line">    fileList = os.walk(filepath)</div><div class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> fileList:</div><div class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</div><div class="line">            <span class="keyword">if</span> bydir:<span class="comment">#如果按目录进行替换的话走下面这个逻辑分支</span></div><div class="line">                filefullpath = os.path.join(root, file)</div><div class="line">                targetfullpath = filefullpath.replace(filepath, softpath)</div><div class="line">                shutil.copy2(filefullpath, targetfullpath)</div><div class="line">                printandwritelog(<span class="string">u"文件 %s 拷贝到 %s 成功"</span> % (filefullpath, targetfullpath))</div><div class="line">            <span class="keyword">else</span>:<span class="comment">#如果自行查找文件路径进行替换的话先走下这个逻辑分支</span></div><div class="line">                filecounts = checkcount(file, filecontext)</div><div class="line">                <span class="keyword">if</span> (<span class="number">0</span> == filecounts):</div><div class="line">                    printandwritelog(<span class="string">u"没有找到文件%s的路径，请使用指定路径方式进行替换"</span> % file)</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">                <span class="keyword">elif</span> (<span class="number">1</span> &lt; filecounts):</div><div class="line">                    printandwritelog(<span class="string">u"文件 %s 有 %s 个路径，请使用指定路径方式进行替换"</span> % (file , filecounts))</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">                <span class="keyword">elif</span> (<span class="number">1</span> == filecounts):</div><div class="line">                    <span class="keyword">for</span> line <span class="keyword">in</span> context.split(<span class="string">"\n"</span>):</div><div class="line">                        filename = line.split(<span class="string">"\\"</span>)[<span class="number">-1</span>]</div><div class="line">                        <span class="keyword">if</span> file == filename:</div><div class="line">                            os.rename(line , line + str(random.randint(<span class="number">0</span>, <span class="number">100</span>)))</div><div class="line">                            shutil.copy2(os.path.join(root, file), line)</div><div class="line">                            printandwritelog(<span class="string">u"文件 %s 拷贝到 %s 成功"</span> % (os.path.join(root, file), line))</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    printandwritelog(<span class="string">u"替换文件个数有误%s"</span> % file)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#判断如果是本地文件则直接调用替换函数，如果是网络路径，则先下载文件再替换</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">RelpaceFiles</span><span class="params">(filepath, context, filecontext, softpath, bydir)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="string">":"</span> <span class="keyword">in</span> filepath:</div><div class="line">        printandwritelog(<span class="string">u"提供的本地路径，走本地路径文件替换流程"</span>)</div><div class="line">        ReplaceLocalFiles(filepath, context, filecontext, softpath, bydir)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        printandwritelog(<span class="string">u"提供的FTP路径，先下载文件到本地后再执行替换流程"</span>)</div><div class="line">        sourceFileDir = cur_file_dir() + <span class="string">r"\testdir"</span></div><div class="line">        <span class="keyword">if</span> os.path.isdir(sourceFileDir):</div><div class="line">            shutil.rmtree(sourceFileDir)</div><div class="line">        obj = netutilex.SFTP(<span class="string">"192.168.1.100"</span>, <span class="string">"test"</span>, <span class="string">"testpwd"</span>)</div><div class="line">        obj.syncSftpDir(filepath, sourceFileDir)</div><div class="line">        obj.close()</div><div class="line">        ReplaceLocalFiles(sourceFileDir, context, filecontext, softpath, bydir)</div><div class="line"></div><div class="line"><span class="comment">#先处理替换前的前置操作，环境准备好之后执行替换操作    </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReplaceAllFiles</span><span class="params">(filepath, bydir)</span>:</span></div><div class="line">    softpath = checkinst()</div><div class="line">    <span class="keyword">if</span> (<span class="string">"notinst"</span> == softpath):</div><div class="line">        printandwritelog(<span class="string">u"没有检测到卫士安装目录，请确认后重试"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        context, filecontext = getallfiles(softpath)</div><div class="line">        RelpaceFiles(filepath, context, filecontext, softpath, bydir)</div></pre></td></tr></table></figure>
+<p>先简单说明下各函数的功能：</p>
+<blockquote>
+<p>ReplaceLocalFiles：主要功能函数，实现具体的替换操作；<br>RelpaceFiles：根据传入参数判断是否是网络路径，如果是则先把文件下载到本地，然后调用ReplaceLocalFiles执行替换操作；<br>ReplaceAllFiles：做了一些环境准备的事情，然后调用实际的功能函数RelpaceFiles进行干活；<br>printandwritelog：记录日志并输出；<br>checkinst：检查目标程序是否安装，如果安装则返回安装路径；<br>getallfiles：获取目标应用程序的文件全路径集合；<br>checkcount：获取指定文件名在目标应用程序文件集合中出现的次数<br>netutilex：一个独立的操作SFTP的库文件。</p>
+</blockquote>
+<p>从目前的代码中能发现至少有 2 个地方可以优化：</p>
+<ol>
+<li>函数之间需要传递的参数太多了，可以看看是否全部必要，考虑下如何精简；</li>
+<li>部分业务逻辑太细化，有重复的代码实现，导致实现看起来比较臃肿。</li>
+</ol>
+<p>对于第 1 点，优化的思路是：对于非所有函数都必须调用的参数，尽可能的固化到实际使用的函数中，避免各函数仅仅做了传递员的工作。</p>
+<p>对于第 2 点，优化的思路是：合并同类项，对于重复代码的部分，尽可能提取到共用逻辑中实现。</p>
+<p>下面是优化后的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#执行本地文件替换的具体操作      </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReplaceLocalFiles</span><span class="params">(filepath, bydir)</span>:</span></div><div class="line">    <span class="keyword">if</span> (<span class="string">":"</span> <span class="keyword">not</span> <span class="keyword">in</span> filepath) <span class="keyword">or</span> (<span class="keyword">not</span> os.path.isdir(filepath)):</div><div class="line">        printandwritelog(<span class="string">u"目标路径有误，请确认是合法目录后重试"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span></div><div class="line">    softpath = checkinst()</div><div class="line">    <span class="keyword">if</span> (<span class="string">"notinst"</span> == softpath):</div><div class="line">        printandwritelog(<span class="string">u"没有获取到目标软件安装目录，请确认后重试"</span>)</div><div class="line">        <span class="keyword">return</span> <span class="string">"error"</span></div><div class="line">    context, filecontext = getallfiles(softpath)</div><div class="line">    fileList = os.walk(filepath)</div><div class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> fileList:</div><div class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</div><div class="line">            filefullpath = os.path.join(root, file)</div><div class="line">            targetfullpath = filefullpath.replace(filepath, softpath)</div><div class="line">            <span class="keyword">if</span> <span class="keyword">not</span> bydir:<span class="comment">#如果自行查找文件路径进行替换的话先走下这个逻辑分支</span></div><div class="line">                filecounts = checkcount(file, filecontext)</div><div class="line">                <span class="keyword">if</span> (<span class="number">0</span> == filecounts):</div><div class="line">                    printandwritelog(<span class="string">u"没有找到文件%s的路径，请使用指定路径方式进行替换"</span> % file)</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">                <span class="keyword">elif</span> (<span class="number">1</span> &lt; filecounts):</div><div class="line">                    printandwritelog(<span class="string">u"文件 %s 有 %s 个路径，请使用指定路径方式进行替换"</span> % (file , filecounts))</div><div class="line">                    <span class="keyword">continue</span></div><div class="line">                <span class="keyword">elif</span> (<span class="number">1</span> == filecounts):</div><div class="line">                    <span class="keyword">for</span> line <span class="keyword">in</span> context.split(<span class="string">"\n"</span>):</div><div class="line">                        filename = line.split(<span class="string">"\\"</span>)[<span class="number">-1</span>]</div><div class="line">                        <span class="keyword">if</span> file == filename:</div><div class="line">                            targetfullpath = line</div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    printandwritelog(<span class="string">u"替换文件个数有误%s"</span> % file)</div><div class="line">            <span class="keyword">if</span> os.path.isfile(targetfullpath):</div><div class="line">                randomend = random.randint(<span class="number">0</span>, <span class="number">100</span>)</div><div class="line">                os.rename(targetfullpath , targetfullpath + str(randomend))</div><div class="line">            shutil.copy2(filefullpath, targetfullpath)</div><div class="line">            printandwritelog(<span class="string">u"文件 %s 拷贝到 %s 成功"</span> % (filefullpath, targetfullpath))</div><div class="line"></div><div class="line"><span class="comment">#先处理替换前的前置操作，环境准备好之后执行替换操作    </span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReplaceAllFiles</span><span class="params">(filepath, bydir)</span>:</span></div><div class="line">    sourceFileDir = filepath</div><div class="line">    <span class="keyword">if</span> <span class="string">":"</span> <span class="keyword">in</span> filepath:</div><div class="line">        printandwritelog(<span class="string">u"提供的本地路径，走本地路径文件替换流程"</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        printandwritelog(<span class="string">u"提供的FTP路径，先下载文件到本地后再执行替换流程"</span>)</div><div class="line">        sourceFileDir = cur_file_dir() + <span class="string">r"\testdir"</span></div><div class="line">        <span class="keyword">if</span> os.path.isdir(sourceFileDir):</div><div class="line">            shutil.rmtree(sourceFileDir)</div><div class="line">        obj = netutilex.SFTP(<span class="string">"192.168.1.100"</span>, <span class="string">"test"</span>, <span class="string">"testpwd"</span>)</div><div class="line">        obj.syncSftpDir(filepath, sourceFileDir)</div><div class="line">        obj.close()</div><div class="line">    ReplaceLocalFiles(sourceFileDir, bydir)</div></pre></td></tr></table></figure>
+<p>具体的优化操作有：</p>
+<blockquote>
+<p>把函数 checkinst 和 getallfiles 的调用实现放到了其返回值使用者 ReplaceLocalFiles 的函数体内，减少了 2 个参数的多次传递；<br>把函数 ReplaceLocalFiles 中具体的 copy2 操作进行了提取，因为 bydir 和非 bydir 最终都会走到这个操作；<br>把函数 ReplaceFiles 中对函数 ReplaceLocalFiles 的操作进行了提取，同时把函数 ReplaceAllFiles 和 ReplaceFiles 进行了合并。</p>
+</blockquote>
+<p>优化后的结果看起来有没有清爽很多？</p>
 
       
     </div>
@@ -479,7 +471,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.sylan215.com/20171104-vm-nat.html" title="如何使用 VM 虚拟机端口映射实现数据转发">http://www.sylan215.com/20171104-vm-nat.html</a>
+    <a href="http://www.sylan215.com/python-youhua.html" title="Python 代码优化实践">http://www.sylan215.com/python-youhua.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -494,15 +486,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/虚拟机/" rel="tag"># 虚拟机</a>
+            <a href="/tags/文件/" rel="tag"># 文件</a>
           
-            <a href="/tags/映射/" rel="tag"># 映射</a>
+            <a href="/tags/文件夹/" rel="tag"># 文件夹</a>
           
-            <a href="/tags/访问/" rel="tag"># 访问</a>
+            <a href="/tags/遍历/" rel="tag"># 遍历</a>
           
-            <a href="/tags/转发/" rel="tag"># 转发</a>
+            <a href="/tags/SFTP/" rel="tag"># SFTP</a>
           
         </div>
       
@@ -515,18 +507,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20171107-git-revert-reset.html" rel="next" title="如何使用 Git 实现版本回退">
-                <i class="fa fa-chevron-left"></i> 如何使用 Git 实现版本回退
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/upload-to-qiniu.html" rel="prev" title="使用七牛接口实现图片和文件一键上传">
-                使用七牛接口实现图片和文件一键上传 <i class="fa fa-chevron-right"></i>
+              <a href="/python-wenjianbianli.html" rel="prev" title="如何优雅的使用 Python 实现文件递归遍历">
+                如何优雅的使用 Python 实现文件递归遍历 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -542,7 +530,7 @@
   
   </article>
   
-  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/20171107-git-revert-reset.html">如何使用 Git 实现版本回退</a></li><li><a href="/git-config-on-ubuntu.html">手把手教你在 Ubuntu 上搭建 Git 服务器</a></li></ul>
+  	<h3> 相关文章：</h3><ul class="related-posts"><li><a href="/python-wenjianbianli.html">如何优雅的使用 Python 实现文件递归遍历</a></li><li><a href="/heart-flow.html">心流</a></li><li><a href="/python-defaultencode.html">Python2 和 Python3 中默认编码的差异</a></li><li><a href="/python-socket-inet-aton.html">由 Python2 和 Python3 中 socket.inet_aton() 实现不同引发的血案</a></li></ul>
   
 
 
@@ -588,17 +576,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/upload/sylan215.jpg"
@@ -673,22 +652,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始设置"><span class="nav-number">2.</span> <span class="nav-text">开始设置</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -835,9 +798,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.sylan215.com/20171104-vm-nat.html';
-          this.page.identifier = '20171104-vm-nat.html';
-          this.page.title = '如何使用 VM 虚拟机端口映射实现数据转发';
+          this.page.url = 'http://www.sylan215.com/python-youhua.html';
+          this.page.identifier = 'python-youhua.html';
+          this.page.title = 'Python 代码优化实践';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://sylan215.disqus.com/embed.js';
