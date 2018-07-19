@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-config-build.html</loc>
+    <lastmod>2018-07-19T14:21:07.452Z</lastmod>
+    <data>
+        <display>
+        <title>多个版本的 Python 在使用中的灵活切换</title>
+        <pubTime>2018-07-20T15:26:00.000Z</pubTime>
+        
+        <tag>python3</tag>
+         
+        <tag>python多版本共存</tag>
+         
+        <tag>windows python多版本</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/python-coding.html</loc>
     <lastmod>2018-07-16T23:30:14.571Z</lastmod>
     <data>
@@ -11,13 +38,13 @@
         <title>彻底搞懂 Python 编码</title>
         <pubTime>2018-07-17T00:09:00.000Z</pubTime>
         
+        <tag>编码</tag>
+         
         <tag>python3编码</tag>
          
         <tag>中文</tag>
          
         <tag>utf-8</tag>
-         
-        <tag>编码</tag>
          
         <tag>汉字</tag>
          
@@ -44,11 +71,11 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>decode</tag>
          
         <tag>encode</tag>
+         
+        <tag>编码</tag>
          
         <tag>python3默认编码</tag>
          
@@ -75,13 +102,13 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>python3</tag>
          
         <tag>decode</tag>
          
         <tag>encode</tag>
+         
+        <tag>编码</tag>
          
          
            
@@ -208,33 +235,6 @@
           
              
               <breadCrumb title="linux" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/python-config-build.html</loc>
-    <lastmod>2017-11-07T15:24:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>多个版本的 Python 在使用中的灵活切换</title>
-        <pubTime>2017-10-29T15:26:00.000Z</pubTime>
-        
-        <tag>python3</tag>
-         
-        <tag>python多版本共存</tag>
-         
-        <tag>windows python多版本</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
-          
-             
-              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
           
         </display>
     </data>
