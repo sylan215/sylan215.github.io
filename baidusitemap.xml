@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-svn.html</loc>
+    <lastmod>2018-07-23T13:32:26.937Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Python 一键配置 SVN 账号和属组信息</title>
+        <pubTime>2018-07-24T15:03:02.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>svn</tag>
+         
+        <tag>设置</tag>
+         
+        <tag>配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/python-config-build.html</loc>
     <lastmod>2018-07-19T14:21:07.452Z</lastmod>
     <data>
@@ -71,11 +102,11 @@
         
         <tag>python</tag>
          
-        <tag>decode</tag>
+        <tag>编码</tag>
          
         <tag>encode</tag>
          
-        <tag>编码</tag>
+        <tag>decode</tag>
          
         <tag>python3默认编码</tag>
          
@@ -104,11 +135,11 @@
          
         <tag>python3</tag>
          
-        <tag>decode</tag>
+        <tag>编码</tag>
          
         <tag>encode</tag>
          
-        <tag>编码</tag>
+        <tag>decode</tag>
          
          
            

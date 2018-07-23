@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用 Python 一键配置 SVN 账号和属组信息]]></title>
+    <url>%2Fpython-svn.html</url>
+    <content type="text"><![CDATA[虽然现在 Git 已经很普及，但是我相信用 SVN 的公司仍然不少，那么作为 SVN 配置管理员的话，就不可避免的涉及到账号维护的问题，今天我们就说说如何通过 Python 脚本实现用户的快捷维护。 如果手动维护用户，一般需要三个步骤：1.手动添加用户2.手动设置属组3.通知用户设置结果 使用脚本后也是三步，但是效率却大大提升：1.输入用户名2.输入要设置的组名3.按下回车，搞定 这里面设置用户和属组是关键点，也是我们需要自动化起来的操作，下面分别给出实现的代码： 12345678910111213def add_user(user_name): """如果用户不存在则调用htpasswd.exe添加用户""" htpasswd_path = cur_file_dir() + '\\bin\\htpasswd.exe -b ' pwd_path = REP_PATH + '\\htpasswd ' user_list = readfiles(REP_PATH + '\\htpasswd') for line in user_list.split('\n'): if ':' in line and user_name.lower() == line.split(':')[0]: print('用户 ' + user_name + ' 已存在，不需要创建') return "见之前邮件通知" pwd = ' sylan215@' + str(random.randrange(1000, 9999, 1)) print(execut_ret(htpasswd_path + pwd_path + user_name + pwd)[1]) return pwd.strip() 这段是创建用户的代码，下面做下说明： cur_file_dir() 函数功能是获取执行脚本所在路径；htpasswd.exe 是从 Apache 目录拷贝出来的工具，可以在指定文件添加指定的用户名和密码信息，命令行使用方法「htpasswd.exe -b [密码文件] [用户名] [密码]」，更多使用说明请 Google；REP_PATH 是我定义的一个全局变量，是我 SVN 仓库的根目录，目录下会存放用户和组设置的配置文件；htpasswd 文件就是上面说的用户信息存储文件；pwd 是我通过随机数生成的以 sylan215@ 开头的 13 位密码；execut_ret() 函数功能是执行指定程序并返回执行结果的，目前就是执行 htpasswd.exe 添加指定用户信息； 接着我们来看看设置组信息的代码：123456789101112131415161718192021222324252627def add_group(user_name, user_grp): """添加用户到指定用户组""" grp_path = REP_PATH + "\\groups.conf" grp_context = readfiles(grp_path) new_context = "" isadd = False for line in grp_context.split('\n'): if '=' in line and user_grp.lower() == line.split('=')[0].lower(): if user_name.lower() in line.lower(): print("用户 " + user_name + " 已经属于 " + user_grp) return False if line.split('=')[1] != '': new_line = line + "," + user_name else: new_line = line + user_name new_context = grp_context.replace(line, new_line) isadd = True break if isadd: writetofile(grp_path, new_context) print("用户 " + user_name + " 成功添加到组 " + user_grp) return True else: print("组设置失败，请检查组名是否正确") return True 对这个函数的说明： 本函数功能就是读取组设置文件 groups.conf，检查当前用户是否存在于目标组里面，如果存在直接返回，否则添加用户到组里面；readfiles() 函数功能是一次读出目标文件的所有内容；writetofile() 函数功能是把指定内容写入指定文件； 下面是最后的统一调用函数，以及入口函数实现：123456789101112131415161718192021def useradd(user_name, user_grp): """"添加用户+添加属组+邮件通知""" ret_grp = False pwd = add_user(user_name) if ',' in user_grp: for each_group in user_grp.split(','): if add_group(user_name, each_group): ret_grp = True elif add_group(user_name, user_grp): ret_grp = True if ret_grp: sendcontextmail(user_name, pwd, user_grp)if __name__ == "__main__": while True: user_name = input("请输入用户名(多个用户请用英文逗号分隔)：") user_group = input("请输入要加入的属组(多个组请用英文逗号分隔)：") for usr in user_name.split(','): useradd(usr, user_group) 说明： sendcontextmail() 函数是公用的邮件通知函数；统一处理函数可以处理一个用户添加多个用户组的情况；入口函数可以处理多个用户同时添加的情况，并且做了无限循环，这样把窗口挂在服务器上可以随取随用了；上述代码是基于 Python3.4 验证通过的，其他版本应该同理；上述说明是基于 Windows 进行实现的；上述实现是基于 SVN 自带的账号和组管理系统的； 如果是基于 Windows 的账号和组设置体系，代码上比这个简单：12345678910111213141516171819def useradd(username, usergroup): """添加 windows 账号，并设置属组""" pwd = ' sylan215@' + str(random.randrange(1000, 9999, 1)) retinfo = execut_ret('net.exe user ' + username + pwd + ' /add') if '命令成功完成' not in retinfo[0]: print('用户已创建失败：' + retinfo[1]) print('用户创建成功：' + username) print('随机密码：' + pwd) for groupname in usergroup.split(','): retinfo = execut_ret('net.exe localgroup ' + groupname + ' ' + username + ' /add') if '命令成功完成' not in retinfo[0]: print('设置用户属组失败：' + retinfo[1]) print('用户已加入属组：' + groupname) sendcontextmail(username, pwd, usergroup) 好了，通过这么少的代码就可以瞬间搞定用户配置问题，维护起来是不是 so easy 了(如果有同学需要完整代码，请在公众号后台撩我哈)。]]></content>
+      <categories>
+        <category>编程</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>编码</tag>
+        <tag>svn</tag>
+        <tag>设置</tag>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[多个版本的 Python 在使用中的灵活切换]]></title>
     <url>%2Fpython-config-build.html</url>
     <content type="text"><![CDATA[今天我们来说说在 windows 系统上如果有多版本的 python 并存时，如何优雅的进行灵活切换。 虽然 Python3 已经出来很久了，虽然 Python2 即将成为历史了，但是因为历史原因，依然有很多公司的老项目继续在使用着 Python2 版本(切换成本太高)，所以大多数开发者机器上 Python2 和 Python3 都是并存的，本文主要说明这种情况下如何便捷的在 Python2 和 Python3 之间进行切换。 先说明下，本次我们不介绍 virtualenv，也不介绍 pipenv，因为这两个都是为了大型的 Python 工程做准备的，之后会单独文字进行说明。 本次是不借助外部工具，来实现快捷切换。其实也可以说是利用系统环境变量的逻辑来实现目的。 本次环境以 Windows 为例： 系统： Windows 7 x64Python 版本：Python3.4 和 Python 2.7 安装首先安装好 Python3.4 和 Python2.7，安装包可以在这个地方进行下载：点击跳转。 设置环境变量然后分别把对应版本的安装路径加入到系统环境变量中去： 新起一个 cmd 窗口验证下添加后的效果： 123C:\Users&gt;pathPATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Python34;C:\Python27; 这时候我们直接在 cmd 输入 python，已经可以被识别了，但是识别的总是路径在环境变量中排前面的那个版本的 Python，比如目前从上图看 Python3.4 是排前面的，实际验证下看看： 12345C:\Users&gt;pythonPython 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 20:20:57) [MSC v.1600 64 bit (AMD64)] on win32Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.&gt;&gt;&gt; 重命名主程序然后我们分别把两个版本的 Python 主程序 exe 改下名，3.4 版本的改名为 python34.exe，2.7 版本的改名为 python27.exe： 再分别运行 python34 和 python27 试试： 1234567891011C:\Users&gt;python34Python 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 20:20:57) [MSC v.1600 64 bit (AMD64)] on win32Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.&gt;&gt;&gt;C:\Users&gt;python27Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:19:30) [MSC v.1500 32 bit (Intel)] on win32Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.&gt;&gt;&gt; 从上图可以看出，我们已经可以实现分别运行指定版本的效果了，如果执行脚本的话直接 python34 test.py 或者 python27 test.py 就行了。 但是每次执行脚本都加前缀是不是很累，如果有一个版本是我们常用的话，也可以通过修改文件后缀关联程序来实现默认关联，再需要特殊版本的时候再加上前缀就行，不过保险起见，还是一直带着吧。 补充说明补充说明下，其实网上也有网友提供了其他两种方法： 使用 Python 自带的 py -2 和 py -3 命令；另一种和我上面说的类似，但是只重命名了其中一个版本的执行文件名； 如果机器只安装了两个版本的 Python，这几个方法确实是都可以解决的，但是因为我需要部分脚本支持 Windows XP (Python3.5 以后就不支持 XP 了)，所以安装了 Python2.7、Python3.4 和 Python3.6 共三个版本的 Python，这样的话就只能把全部主程序文件都重命名了，而且这样解决的问题更彻底，一劳永逸。 再补充说明下，如果要针对不同版本的 Python 调用 pip，命令后如下(请把 requests 换成自己需要的包名)： 123python27 -m pip install requestspython34 -m pip install requestspython36 -m pip install requests 这样安装的依赖库就是在各个版本之间相互独立的。 好了，赶紧动手试试吧。当然，如果您有更好的建议，欢迎留言讨论。]]></content>
@@ -40,9 +56,9 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>decode</tag>
-        <tag>encode</tag>
         <tag>编码</tag>
+        <tag>encode</tag>
+        <tag>decode</tag>
         <tag>python3默认编码</tag>
       </tags>
   </entry>
@@ -57,9 +73,9 @@
       <tags>
         <tag>python</tag>
         <tag>python3</tag>
-        <tag>decode</tag>
-        <tag>encode</tag>
         <tag>编码</tag>
+        <tag>encode</tag>
+        <tag>decode</tag>
       </tags>
   </entry>
   <entry>
