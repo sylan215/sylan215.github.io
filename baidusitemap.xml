@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/compress-with-tinypng.html</loc>
+    <lastmod>2018-07-25T14:28:06.895Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 tinypng 进行批量压缩</title>
+        <pubTime>2017-11-08T17:00:00.000Z</pubTime>
+        
+        <tag>环境</tag>
+         
+        <tag>tinypng</tag>
+         
+        <tag>存储格式</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/python-svn.html</loc>
     <lastmod>2018-07-23T13:32:26.937Z</lastmod>
     <data>
@@ -69,13 +96,13 @@
         <title>彻底搞懂 Python 编码</title>
         <pubTime>2018-07-17T00:09:00.000Z</pubTime>
         
-        <tag>编码</tag>
-         
         <tag>python3编码</tag>
          
         <tag>中文</tag>
          
         <tag>utf-8</tag>
+         
+        <tag>编码</tag>
          
         <tag>汉字</tag>
          
@@ -104,9 +131,9 @@
          
         <tag>编码</tag>
          
-        <tag>encode</tag>
-         
         <tag>decode</tag>
+         
+        <tag>encode</tag>
          
         <tag>python3默认编码</tag>
          
@@ -133,13 +160,13 @@
         
         <tag>python</tag>
          
-        <tag>python3</tag>
-         
         <tag>编码</tag>
          
-        <tag>encode</tag>
+        <tag>python3</tag>
          
         <tag>decode</tag>
+         
+        <tag>encode</tag>
          
          
            
@@ -210,33 +237,6 @@
           
              
               <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/20171109-compress-with-tinypng.html</loc>
-    <lastmod>2017-11-08T15:21:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何使用 tinypng 进行批量压缩</title>
-        <pubTime>2017-11-08T17:00:00.000Z</pubTime>
-        
-        <tag>环境</tag>
-         
-        <tag>tinypng</tag>
-         
-        <tag>存储格式</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
           
         </display>
     </data>
@@ -543,9 +543,9 @@
         <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
         <pubTime>2017-10-20T17:30:00.000Z</pubTime>
         
-        <tag>git</tag>
-         
         <tag>环境</tag>
+         
+        <tag>git</tag>
          
         <tag>git server搭建</tag>
          
