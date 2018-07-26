@@ -5,11 +5,11 @@
     
   <url>
     <loc>http://www.sylan215.com/compress-with-tinypng.html</loc>
-    <lastmod>2018-07-25T14:28:06.895Z</lastmod>
+    <lastmod>2018-07-26T13:58:11.635Z</lastmod>
     <data>
         <display>
         <title>如何使用 tinypng 进行批量压缩</title>
-        <pubTime>2017-11-08T17:00:00.000Z</pubTime>
+        <pubTime>2018-07-27T00:30:00.000Z</pubTime>
         
         <tag>环境</tag>
          
@@ -543,9 +543,9 @@
         <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
         <pubTime>2017-10-20T17:30:00.000Z</pubTime>
         
-        <tag>git</tag>
-         
         <tag>环境</tag>
+         
+        <tag>git</tag>
          
         <tag>git server搭建</tag>
          
