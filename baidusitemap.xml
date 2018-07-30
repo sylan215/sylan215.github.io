@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
+    <lastmod>2018-07-30T15:34:35.572Z</lastmod>
+    <data>
+        <display>
+        <title>使用七牛接口实现图片和文件一键上传</title>
+        <pubTime>2018-07-31T04:56:00.000Z</pubTime>
+        
+        <tag>七牛图片上传</tag>
+         
+        <tag>七牛文件上传</tag>
+         
+        <tag>图床</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/compress-with-tinypng.html</loc>
     <lastmod>2018-07-26T13:58:11.635Z</lastmod>
     <data>
@@ -96,13 +123,13 @@
         <title>彻底搞懂 Python 编码</title>
         <pubTime>2018-07-17T00:09:00.000Z</pubTime>
         
+        <tag>编码</tag>
+         
         <tag>python3编码</tag>
          
         <tag>中文</tag>
          
         <tag>utf-8</tag>
-         
-        <tag>编码</tag>
          
         <tag>汉字</tag>
          
@@ -131,9 +158,9 @@
          
         <tag>编码</tag>
          
-        <tag>decode</tag>
-         
         <tag>encode</tag>
+         
+        <tag>decode</tag>
          
         <tag>python3默认编码</tag>
          
@@ -160,13 +187,13 @@
         
         <tag>python</tag>
          
-        <tag>编码</tag>
-         
         <tag>python3</tag>
          
-        <tag>decode</tag>
+        <tag>编码</tag>
          
         <tag>encode</tag>
+         
+        <tag>decode</tag>
          
          
            
@@ -193,11 +220,11 @@
          
         <tag>文件</tag>
          
+        <tag>SFTP</tag>
+         
         <tag>文件夹</tag>
          
         <tag>遍历</tag>
-         
-        <tag>SFTP</tag>
          
          
            
@@ -224,11 +251,11 @@
          
         <tag>文件</tag>
          
-        <tag>递归</tag>
-         
         <tag>文件夹</tag>
          
         <tag>遍历</tag>
+         
+        <tag>递归</tag>
          
          
            
@@ -266,33 +293,6 @@
           
              
               <breadCrumb title="linux" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/upload-to-qiniu.html</loc>
-    <lastmod>2017-11-07T15:19:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用七牛接口实现图片和文件一键上传</title>
-        <pubTime>2017-11-01T14:56:00.000Z</pubTime>
-        
-        <tag>七牛图片上传</tag>
-         
-        <tag>七牛文件上传</tag>
-         
-        <tag>图床</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="hexo" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/hexo/"/>
           
         </display>
     </data>
@@ -543,9 +543,9 @@
         <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
         <pubTime>2017-10-20T17:30:00.000Z</pubTime>
         
-        <tag>环境</tag>
-         
         <tag>git</tag>
+         
+        <tag>环境</tag>
          
         <tag>git server搭建</tag>
          
