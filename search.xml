@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[不会正确和产品掐架的开发不是好测试]]></title>
+    <url>%2Ftest-goutong.html</url>
+    <content type="text"><![CDATA[背景：网上发的程序员和产品经理因为「根据用户手机壳颜色来改变软件主题颜色」的需求问题打架的视频，大家肯定都看到了吧。什么？你还没看到？好吧，请自行 Google 一把哈。至于为什么会打起来，网上给原因是这样的： 甚至有人还原了当时的对话，过程是这样的： 看完这些，不知道你做何感想？ 讨论：中午我和开发聊起这个事情时，他们倒是很较真的讨论起网上的一些解决方案来，什么图像识别啦，脑电波啦，瞳孔反光啦，看，先不说能否落实，但这才是解决问题的态度嘛，就喜欢和这样的开发合作。然后看看网上一些产品经理对这个事件的质疑，觉得事件中的产品经理不可能会提出这么「无理」的需求，并且指出了需求中的明显不符合产品思维的点，看，这才是有产品思维的产品嘛，就喜欢和这样的产品合作。如果从测试角度来说呢，一般和开发杠起来，他们都会说「行了，我代码保证」，和产品杠起来，他们会说「我确认就这么实现，出了问题算我的」，得，当爷的感觉真好。不过说到底，这件事给我的感觉就一个：一个巴掌拍不响。 或者说就是沟通的问题。 就截图这样的对话方式，就算今天不因为这个事打起来，明天也肯定会因为另一件事打起来。关注我的同学都知道，我的主业是做测试，而说到沟通方式，作为测试，每天都要保持着同开发和产品的战斗激情，还要保证项目顺利上线，我们是积攒了不少战斗技巧和经验的。 建议：下面就具体说说我对于沟通上面的一些具体建议： 1. 说话时尽量避免使用反问句。这个建议最开始是我老大提给我的，之前一直没咋注意，听到时一惊，回头想想，反问真的比陈述句的语气要强烈的多，来几句你听听。 「你难道不觉得这个设计有点反人类？」「你难道不觉得最近提测质量有点差？」 好吧，本来我是想探讨的，但是听的人一琢磨，其实我已经是表达了非常肯定的意思： 「这个设计真 TMD 反人类。」「最近提测质量真 TMD 差。」 其实直接换成陈述句，语气会好很多，比如： 「我觉得这个设计有点反人类，我建议这么改一下。」「我觉得最近提测质量有点差，你我建议这么优化一下流程。」 是不是让人容易接受的多了？ 2. 沟通问题时，不要不假思索的否定别人。想象下这么个场景。 产品经理火急火燎的拉上开发和测试，说老板要求明天紧急上线一个需求，大概是这么这么样的。开发一听，头就大了，这至少需要两天时间开发，「不行，搞不了。」测试一听，开发需要两天，那最少也要测试一天吧，还要留时间走发布流程，「不行，绝对搞不了。」产品：「再想想办法呗，这个确实需要明天发。」开发：「不行。」测试：「搞不了。」 得，开发和测试这时候倒是统一战线了，但是已经决定要做了，这时候去讨论搞了搞不了已经没有任何意义了，甚至是继续在浪费本来就很宝贵的时间。 那换个思路呢？比如： 开发说：「你这个设计的有点冗余，开发量比较大，既然你的需求目的是这样，那么有部分无足轻重的需求建议延期，这样我可以试试。」测试说：「既然定了明天发，那么建议按照明天早上可以提测的方案来，最好今天下班前确定最终方案，这样我们加班把用例准备好，明天来了直接可以测，尽量往前赶时间。」产品说：「行，我现在就去把这个方案同老板过一下，确定方案后立马通知大家。」 看，各方也都充分表达了自己的观点，并被各方认可和接受，最后事情也做成了，皆大欢喜。 3. 就事论事，说话不带情绪。 眼瞅着产品走过来，就知道准又没啥好事，果然，又变更需求了。开发说，「到底能行不？这一个地方我今天都改 TM 十回了，还让不让人活了？」测试说，「我昨天都给你说了，这样改肯定不行，看吧，又改回来了，每次都这样，这不是折腾人么？」 要是新手产品，已经空血倒地了，但是既然要改需求，肯定有他的原因吧，我们可以听听这次的原因，然后一起总结下下次怎么避免同样的事情再发生。 开发可以说：「幸亏我之前的代码还在，我先回滚下，不过这已经是今天第十次变更需求了哈，后面建议需求考虑清楚些，以后每天我只接收五次以内的需求变更。」测试可以说：「本次这个需求，前面我们提过建议，这次还是返工了，我建议我们一起开会讨论下最终的需求方案，每个人都发表下自己的看法，充分讨论一次，达成一个共识的结果，项目结束前大目标就不再变了。」 看，大家都是朝着解决问题的方向去考虑，事情就容易的多了，当然，我这例子举的有点偏袒产品了，就当卖产品个人情了哈。好了，再回头看看本次的掐架事件，我觉得没必要去确认真假，从这个事情上能学到我们不必亲身去经历就能得到的经验，才是最主要的。 最后， 愿产品永不变更需求；愿开发永不出低级错误；愿测试永不漏出任何问题。 你所在的项目中，是否也存在各种各样类似的问题？你是怎么处理的呢？欢迎留言讨论。]]></content>
+      <categories>
+        <category>测试相关</category>
+        <category>职业发展</category>
+      </categories>
+      <tags>
+        <tag>沟通</tag>
+        <tag>测试</tag>
+        <tag>开发</tag>
+        <tag>产品</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用七牛接口实现图片和文件一键上传]]></title>
     <url>%2Fupload-to-qiniu.html</url>
     <content type="text"><![CDATA[本文主要介绍使用七牛提供的接口把七牛云作为图床，用 Python 实现图片上传和文件上传的脚本实现，可以支持按文件夹批量上传。 搭建过网站的同学，一定都涉及到图片上传和文件上传的问题，最近为了弄图片资源接触了一下云存储，还挺挺好用。 之前如果我们把图片资源存储到本机服务器，那就每次写文章的时候都需要准备一堆的图片，并且要上传到对应的相对目录上去，如果用了云存储(不限七牛)，好处就是需要的资源直接上传，然后生成一个链接来使用就行了，Markdown 语法对链接的支持也很好，恩，可以搞一下。 不过，又有了新问题，就是是用云存储，得先经过登录-&gt;打开对象存储-&gt;打开内容管理-&gt;上传，然后填入上传后的相对目录，并手动选择本地文件，是不是很麻烦？ 所以本次是提供了一个一键上传资源的脚本(仅针对七牛云)，实现的效果就是，输入项目目录和文件本地地址后，自动上传所有文件到云端，并生成可使用 URL。 来，直接上代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748# -*- coding: utf-8 -*-import osimport sysfrom qiniu import Auth, put_fileif 3 != len(sys.argv): print('[Usage] %s [dir_set] [filepath]' % os.path.basename(sys.argv[0])) sys.exit(0)else: # dir_set 的格式为 image/upload-qiniu/ ，注意末尾带反斜杠/ dir_set = sys.argv[1] file_path = sys.argv[2]# 个人中心-&gt;密匙管理-&gt;AKaccess_key = '你的AccessKey'# 个人中心-&gt;密匙管理-&gt;SKsecret_key = '你的SecretKey'# 七牛空间名bucket_name = '你的存储空间名'qiniu_auth = Auth(access_key, secret_key)def upload_qiniu(input_path): #upload single file to qiniu filename = os.path.basename(input_path) key = '%s%s' % (dir_set, filename) token = qiniu_auth.upload_token(bucket_name, key) ret, info = put_file(token, key, input_path, check_crc=True) if ret and ret['key'] == key: print('%s done' % ('http://www.sylan215.com/' + dir_set + filename)) else: print('%s error' % ('http://www.sylan215.com/' + dir_set + filename))def upload_all_files(input_path): if os.path.isfile(input_path): upload_qiniu(input_path) elif os.path.isdir(input_path): dirlist = os.walk(input_path) for root, dirs, files in dirlist: for filename in files: upload_qiniu(os.path.join(root, filename)) else: print('Please input the exists file path!')if __name__ == "__main__": upload_all_files(file_path) 使用说明1. 请先安装 qiniu 的依赖库：1python -m pip install qiniu 2. 修改绑定域名修改代码中的 http://www.sylan215.com 为自己在七牛云存储绑定的域名 3. 带两个参数执行脚本第一个参数是上传后的目录，第二个参数是文件在本地的地址，支持文件夹。 其中第一个参数的目录格式为：image/test/。 比如如下的命令: 1upload_to_qiniu.py image/test/ d:\test.png 运行后，上传后的文件地址就类似：http://www.sylan215.com/image/test/test.png PS：已使用 Python2.7 和 Python3.4 亲测有效，其他 Python 版本如果有异常，请反馈。 更详细的说明请跳转到项目地址：https://github.com/sylan215/upload-to-qiniu，欢迎大家 star，并一起丰富这个脚本的功能。]]></content>
@@ -67,10 +82,10 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>编码</tag>
         <tag>python3编码</tag>
         <tag>中文</tag>
         <tag>utf-8</tag>
+        <tag>编码</tag>
         <tag>汉字</tag>
       </tags>
   </entry>
@@ -85,8 +100,8 @@
       <tags>
         <tag>python</tag>
         <tag>编码</tag>
-        <tag>encode</tag>
         <tag>decode</tag>
+        <tag>encode</tag>
         <tag>python3默认编码</tag>
       </tags>
   </entry>
@@ -100,10 +115,10 @@
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>python3</tag>
         <tag>编码</tag>
-        <tag>encode</tag>
         <tag>decode</tag>
+        <tag>encode</tag>
+        <tag>python3</tag>
       </tags>
   </entry>
   <entry>
