@@ -216,13 +216,13 @@
         
         <tag>python</tag>
          
+        <tag>python3</tag>
+         
         <tag>编码</tag>
          
         <tag>decode</tag>
          
         <tag>encode</tag>
-         
-        <tag>python3</tag>
          
          
            
@@ -249,11 +249,11 @@
          
         <tag>文件</tag>
          
-        <tag>SFTP</tag>
-         
         <tag>文件夹</tag>
          
         <tag>遍历</tag>
+         
+        <tag>SFTP</tag>
          
          
            
@@ -280,11 +280,11 @@
          
         <tag>文件</tag>
          
+        <tag>递归</tag>
+         
         <tag>文件夹</tag>
          
         <tag>遍历</tag>
-         
-        <tag>递归</tag>
          
          
            
@@ -572,9 +572,9 @@
         <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
         <pubTime>2017-10-20T17:30:00.000Z</pubTime>
         
-        <tag>git</tag>
-         
         <tag>环境</tag>
+         
+        <tag>git</tag>
          
         <tag>git server搭建</tag>
          

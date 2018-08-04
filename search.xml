@@ -115,10 +115,10 @@
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>python3</tag>
         <tag>编码</tag>
         <tag>decode</tag>
         <tag>encode</tag>
-        <tag>python3</tag>
       </tags>
   </entry>
   <entry>
@@ -132,9 +132,9 @@
       <tags>
         <tag>python</tag>
         <tag>文件</tag>
-        <tag>SFTP</tag>
         <tag>文件夹</tag>
         <tag>遍历</tag>
+        <tag>SFTP</tag>
       </tags>
   </entry>
   <entry>
@@ -148,9 +148,9 @@
       <tags>
         <tag>python</tag>
         <tag>文件</tag>
+        <tag>递归</tag>
         <tag>文件夹</tag>
         <tag>遍历</tag>
-        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -252,8 +252,8 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>环境</tag>
+        <tag>git</tag>
         <tag>git server搭建</tag>
         <tag>ubuntu git server</tag>
         <tag>搭建git lab</tag>
