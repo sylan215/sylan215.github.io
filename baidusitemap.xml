@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-IEEE.html</loc>
+    <lastmod>2018-08-05T14:52:51.561Z</lastmod>
+    <data>
+        <display>
+        <title>恭喜 Python 成功卫冕</title>
+        <pubTime>2018-08-05T14:47:11.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>IEEE</tag>
+         
+        <tag>TIOBE</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/test-goutong.html</loc>
     <lastmod>2018-08-04T09:06:59.304Z</lastmod>
     <data>
@@ -572,9 +596,9 @@
         <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
         <pubTime>2017-10-20T17:30:00.000Z</pubTime>
         
-        <tag>环境</tag>
-         
         <tag>git</tag>
+         
+        <tag>环境</tag>
          
         <tag>git server搭建</tag>
          
