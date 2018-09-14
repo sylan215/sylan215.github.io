@@ -4,6 +4,357 @@
 
     
   <url>
+    <loc>http://www.sylan215.com/python-aes.html</loc>
+    <lastmod>2018-09-14T15:59:08.459Z</lastmod>
+    <data>
+        <display>
+        <title>Python3.4 安装 pycrypto 提示错误的处理办法</title>
+        <pubTime>2018-08-22T15:35:24.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.sylan215.com/categories/%E7%BC%96%E7%A8%8B/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/jianli-wenti.html</loc>
+    <lastmod>2018-09-14T15:58:25.492Z</lastmod>
+    <data>
+        <display>
+        <title>面试时经常会被问到的 3 个问题</title>
+        <pubTime>2018-09-14T15:37:12.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="职业发展" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/test-why.html</loc>
+    <lastmod>2018-09-14T15:57:35.599Z</lastmod>
+    <data>
+        <display>
+        <title>做软件测试有前途么？</title>
+        <pubTime>2018-08-17T15:33:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="测试管理" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/jianli-error.html</loc>
+    <lastmod>2018-09-14T15:57:32.423Z</lastmod>
+    <data>
+        <display>
+        <title>简历中千万不要出现的 3 个问题</title>
+        <pubTime>2018-08-20T15:37:12.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="职业发展" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/test-pingshen.html</loc>
+    <lastmod>2018-09-14T15:53:42.801Z</lastmod>
+    <data>
+        <display>
+        <title>测试人员在需求评审时做什么？</title>
+        <pubTime>2018-09-12T15:33:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="测试基础" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/selenium-error.html</loc>
+    <lastmod>2018-09-14T15:52:20.351Z</lastmod>
+    <data>
+        <display>
+        <title>Selenium 报 xxxMachineLevelUserCloudPolicyEnrollmentToken 的解决办法</title>
+        <pubTime>2018-09-10T15:42:33.000Z</pubTime>
+        
+        <tag>自动化</tag>
+         
+        <tag>selenium</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+          
+             
+              <breadCrumb title="selenium" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/selenium/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/test-heike.html</loc>
+    <lastmod>2018-09-14T15:50:46.783Z</lastmod>
+    <data>
+        <display>
+        <title>借助「增长黑客」思想进行软件测试</title>
+        <pubTime>2018-08-06T16:45:46.000Z</pubTime>
+        
+        <tag>沟通</tag>
+         
+        <tag>测试</tag>
+         
+        <tag>开发</tag>
+         
+        <tag>产品</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="职业发展" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/test-celue.html</loc>
+    <lastmod>2018-09-14T15:50:15.845Z</lastmod>
+    <data>
+        <display>
+        <title>一块抹布引发的关于测试策略的思考</title>
+        <pubTime>2018-09-07T15:48:02.000Z</pubTime>
+        
+        <tag>测试策略</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="测试基础" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/selenium-new.html</loc>
+    <lastmod>2018-09-14T15:47:04.365Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你搭建 Selenuim 自动化环境</title>
+        <pubTime>2018-09-03T15:42:33.000Z</pubTime>
+        
+        <tag>自动化</tag>
+         
+        <tag>selenium</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+          
+             
+              <breadCrumb title="selenium" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/selenium/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
+    <lastmod>2018-09-14T15:41:44.415Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
+        <pubTime>2018-08-23T17:30:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>环境</tag>
+         
+        <tag>git server搭建</tag>
+         
+        <tag>ubuntu git server</tag>
+         
+        <tag>搭建git lab</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/git-revert-reset.html</loc>
+    <lastmod>2018-09-14T15:41:41.837Z</lastmod>
+    <data>
+        <display>
+        <title>Git 中常用的 4 个命令</title>
+        <pubTime>2018-08-26T17:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>revert</tag>
+         
+        <tag>reset</tag>
+         
+        <tag>回退</tag>
+         
+        <tag>回滚</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/jianli-key.html</loc>
+    <lastmod>2018-09-14T15:41:18.349Z</lastmod>
+    <data>
+        <display>
+        <title>简历中打动人的 3 个关键点</title>
+        <pubTime>2018-08-29T15:37:12.000Z</pubTime>
+        
+        <tag>简历</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试相关" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+          
+             
+              <breadCrumb title="职业发展" url="http://www.sylan215.com/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/postman-trach.html</loc>
+    <lastmod>2018-09-14T15:29:41.022Z</lastmod>
+    <data>
+        <display>
+        <title>恢复 Postman 中误删除的 Collection 的方法</title>
+        <pubTime>2018-08-14T15:21:29.000Z</pubTime>
+        
+        <tag>postman</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+          
+             
+              <breadCrumb title="postman" url="http://www.sylan215.com/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/postman/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.sylan215.com/google-test.html</loc>
+    <lastmod>2018-09-14T15:23:34.464Z</lastmod>
+    <data>
+        <display>
+        <title>我不想看到阉割版的 Google</title>
+        <pubTime>2018-08-07T16:49:54.000Z</pubTime>
+        
+        <tag>google</tag>
+         
+         
+           
+             
+              <breadCrumb title="other" url="http://www.sylan215.com/categories/other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.sylan215.com/python-IEEE.html</loc>
     <lastmod>2018-08-05T14:52:51.561Z</lastmod>
     <data>
@@ -240,9 +591,9 @@
         
         <tag>python</tag>
          
-        <tag>python3</tag>
-         
         <tag>编码</tag>
+         
+        <tag>python3</tag>
          
         <tag>decode</tag>
          
@@ -346,37 +697,6 @@
           
              
               <breadCrumb title="linux" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/20171107-git-revert-reset.html</loc>
-    <lastmod>2017-11-06T16:54:49.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何使用 Git 实现版本回退</title>
-        <pubTime>2017-11-06T17:00:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>revert</tag>
-         
-        <tag>reset</tag>
-         
-        <tag>回退</tag>
-         
-        <tag>回滚</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
           
         </display>
     </data>
@@ -582,37 +902,6 @@
            
              
               <breadCrumb title="读书笔记" url="http://www.sylan215.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.sylan215.com/git-config-on-ubuntu.html</loc>
-    <lastmod>2017-11-01T15:01:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你在 Ubuntu 上搭建 Git 服务器</title>
-        <pubTime>2017-10-20T17:30:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>环境</tag>
-         
-        <tag>git server搭建</tag>
-         
-        <tag>ubuntu git server</tag>
-         
-        <tag>搭建git lab</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-             
-              <breadCrumb title="git" url="http://www.sylan215.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/git/"/>
           
         </display>
     </data>
